@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>釜山 4天3夜輕鬆順路行程表(初版)</title>
+<style>
+:root{
+  --bg:#f4f9fc; --card:#ffffff; --ink:#1f2d3a; --muted:#5d6f7e;
+  --primary:#0b7fab; --primary-d:#075a7a; --accent:#ff7a59; --line:#dbe8f0;
+  --paid:#d9534f; --pass:#1a9e6b; --free:#7a6bd1;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
+.hero{background:linear-gradient(160deg,#0b7fab 0%,#12a6c9 55%,#7fd6e6 100%);color:#fff;padding:56px 20px 70px;text-align:center}
+.hero small{letter-spacing:.3em;opacity:.9}
+.hero h1{margin:10px 0 12px;font-size:2.2rem;line-height:1.3}
+.hero p{max-width:560px;margin:0 auto;font-size:1.05rem;opacity:.95}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:-40px 0 24px}
+.fact{background:var(--card);border-radius:14px;padding:16px 18px;box-shadow:0 6px 18px rgba(11,127,171,.12)}
+.fact b{display:block;color:var(--primary-d);margin-bottom:4px}
+.fact span{color:var(--muted);font-size:.93rem}
+nav{position:sticky;top:0;z-index:10;background:rgba(244,249,252,.95);backdrop-filter:blur(6px);padding:10px 0;border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:8px;overflow-x:auto}
+nav a{flex:1 0 auto;text-align:center;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--primary-d);text-decoration:none;font-weight:600;white-space:nowrap}
+nav a.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+.day{display:none;padding:24px 0 40px}
+.day.on{display:block}
+.day-head{margin-bottom:6px}
+.day-head .no{display:inline-block;background:var(--accent);color:#fff;border-radius:8px;padding:2px 12px;font-weight:700;font-size:.9rem}
+.day-head h2{margin:8px 0 6px;font-size:1.5rem;color:var(--primary-d)}
+.teaser{color:var(--muted);margin:0 0 6px}
+.route{background:#e6f4fa;border-radius:10px;padding:10px 16px;color:var(--primary-d);font-size:1.15rem;font-weight:700;margin:10px 0 18px}
+.route a{color:inherit;text-decoration:underline dotted;text-underline-offset:4px}
+.route a:hover{color:var(--accent)}
+.route small{font-size:.85rem;font-weight:400}
+.period{margin:22px 0 8px;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:8px}
+.period::after{content:"";flex:1;height:1px;background:var(--line)}
+.card{background:var(--card);border-radius:14px;padding:16px 18px;margin-bottom:12px;border:1px solid var(--line)}
+.card h3{margin:0 0 6px;font-size:1.1rem}
+.card p{margin:0;color:#34495a}
+.tag{display:inline-block;font-size:.75rem;font-weight:700;color:#fff;border-radius:6px;padding:1px 8px;margin-left:6px;vertical-align:middle}
+.tag.paid{background:var(--paid)} .tag.pass{background:var(--pass)} .tag.free{background:var(--free)} .tag.opt{background:#8896a3}
+.tip{background:#fff6ec;border-left:5px solid var(--accent);border-radius:10px;padding:14px 16px;margin-top:16px}
+.tip b{color:#c4501f}
+.eat{background:#fffdf3;border-color:#f3e6a8}
+footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9rem}
+@media(max-width:480px){.hero h1{font-size:1.75rem}}
+@media print{nav{display:none}.day{display:block!important;page-break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <small>BUSAN · SOUTH KOREA</small>
+  <h1>釜山 4天3夜<br>輕鬆順路之旅</h1>
+  <p>不用天天搬行李、不用擠著趕行程。住進西面，搭上地鐵，海風、彩色列車與夜景一站一站慢慢收藏。</p>
+</header>
+
+<div class="wrap">
+  <section class="facts">
+    <div class="fact"><b>🏨 一間飯店住到底</b><span>全程入住西面，地鐵 1、2 號線直達東西兩側，不換飯店、省時省力。</span></div>
+    <div class="fact"><b>🎫 48 小時 Busan Pass</b><span>Day 2 上午啟用，一路用到 Day 4 上午，景點玩得划算。</span></div>
+    <div class="fact"><b>🍲 吃得暖、吃得安心</b><span>以熟食、豬肉、海鮮、雞肉與連鎖餐廳為主，餐餐熱騰騰。</span></div>
+  </section>
+</div>
+
+<nav><div class="wrap" id="tabs">
+  <a href="#d1" class="on">Day 1</a><a href="#d2">Day 2</a><a href="#d3">Day 3</a><a href="#d4">Day 4</a>
+</div></nav>
+
+<main class="wrap">
+
+<!-- Day 1 -->
+<section class="day on" id="d1">
+  <div class="day-head"><span class="no">DAY 1</span>
+    <h2>抵達釜山・南浦洞暖心逛街</h2>
+    <p class="teaser">落地先不急著衝刺，把行李放下、吃碗熱湯，再到港邊市場感受釜山的生活味道。</p></div>
+  <div class="route">抵達釜山 ➔ 西面飯店 Check-in ➔ <a href="https://www.google.com/maps/search/?api=1&query=富平罐頭市場%20釜山" target="_blank" rel="noopener">富平罐頭市場</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=札嘎其市場%20釜山" target="_blank" rel="noopener">札嘎其市場</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=樂天百貨光復店%20釜山" target="_blank" rel="noopener">樂天百貨光復店空中花園</a></div>
+
+  <div class="period">☀️ 下午</div>
+  <div class="card"><h3>西面飯店 Check-in</h3><p>抵達後先到西面飯店放行李、稍作休息，用最輕鬆的狀態展開旅程。</p></div>
+  <div class="card eat"><h3>🍽️ 午餐推薦（西面）</h3><p>來一碗熱騰騰的<b>豬肉湯飯</b>，豬大骨熬出的濃郁湯頭配全熟豬肉片，是釜山人的靈魂美食；也可以到西面市場嚐嚐<b>手工刀削麵</b>。</p></div>
+
+  <div class="period">🛍️ 南浦洞室內輕鬆逛</div>
+  <div class="card"><h3>搭 1 號線直達南浦洞</h3><p>約 15 分鐘就到，不用轉車。</p></div>
+  <div class="card"><h3>富平罐頭市場</h3><p>挑一件溫暖又實惠的韓國棉被，買完可請店家直接打包或寄送回飯店，雙手輕鬆繼續逛。</p></div>
+  <div class="card"><h3>札嘎其市場</h3><p>室內大型海鮮市場，滿滿的海味與市井活力，純粹散步看熱鬧也很過癮。</p></div>
+
+  <div class="period">🌇 傍晚與晚餐</div>
+  <div class="card"><h3>樂天百貨光復店・空中花園</h3><p>登上頂樓空中花園，眺望釜山港黃昏與影島大橋，天色漸暗、燈火亮起，是第一天最浪漫的收尾。</p></div>
+  <div class="card eat"><h3>🍽️ 晚餐</h3><p>回到西面後若肚子微餓，可在飯店附近的連鎖超商（CU / GS25）購買包裝完整的熱食、麵包或瓶裝水，輕鬆又方便。</p></div>
+</section>
+
+<!-- Day 2 -->
+<section class="day" id="d2">
+  <div class="day-head"><span class="no">DAY 2</span>
+    <h2>海雲台浪漫海景日</h2>
+    <p class="teaser">彩色小車廂滑過蔚藍海岸、灌籃高手同款平交道、入夜的城市倒影——這一天，每個畫面都適合拍照。</p></div>
+  <div class="route">西面出發 ➔ <a href="https://www.google.com/maps/search/?api=1&query=海雲台天空膠囊列車%20尾浦站%20釜山" target="_blank" rel="noopener">天空膠囊列車</a> ➔ <a href="https://maps.app.goo.gl/Y7zmPEuVrv3YKuZE6" target="_blank" rel="noopener">青沙浦平交道與天空步道</a> ➔ <a href="https://maps.app.goo.gl/Jy55n6xGthVgoG6k7" target="_blank" rel="noopener">海雲台海岸列車</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=SPA%20LAND%20Centum%20City%20釜山" target="_blank" rel="noopener">SPA LAND 汗蒸幕</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=新世界百貨%20Centum%20City%20釜山" target="_blank" rel="noopener">新世界百貨逛街</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=The%20Bay%20101%20釜山" target="_blank" rel="noopener">The Bay 101</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=廣安里海水浴場%20釜山" target="_blank" rel="noopener">廣安里海水浴場</a><br><small>🔥 Pass 啟用第 1 天｜東半部｜從西面搭 2 號線直達海雲台與 Centum City，完全不用換車！</small></div>
+
+  <div class="period">☀️ 上午</div>
+  <div class="card"><h3>天空膠囊列車 Sky Capsule <span class="tag paid">自費票</span></h3><p>預約「尾浦站 ➔ 青沙浦站」，坐進行駛在高空舊鐵道上、色彩繽紛的小車廂，窗外就是無敵蔚藍海景，隨手一拍都是明信片。</p></div>
+  <div class="card"><h3>青沙浦平交道與天空步道</h3><p>走訪被譽為釜山版「灌籃高手平交道」的拍照點，背景就是大海；天空步道的透明玻璃，還能讓你一邊踩著、一邊欣賞腳下的浪花。</p></div>
+
+  <div class="period">🍜 中午</div>
+  <div class="card eat"><h3>青沙浦海鮮午餐</h3><p>在青沙浦挑一間環境好的店家，享用熱騰騰的<b>海鮮刀削麵</b>或<b>海鮮拉麵</b>，湯頭鮮甜暖胃。</p></div>
+
+  <div class="period">🌊 下午</div>
+  <div class="card"><h3>海雲台海岸列車 <span class="tag pass">Pass 免費</span></h3><p>從青沙浦搭乘沿著海岸線行駛的觀光列車返回，座位全面向海，輕鬆欣賞東半部海景。</p></div>
+  <div class="card"><h3>SPA LAND 汗蒸幕（Centum City）<span class="tag pass">Pass 免費</span></h3><p>位於新世界百貨內，憑 Pass 免費入場 4 小時。十多種不同溫度的蒸氣房與泡湯池，環境舒適，把走了一天的疲憊蒸掉。</p></div>
+  <div class="card"><h3>新世界百貨逛街（Centum City）</h3><p>泡完汗蒸幕，順路在同一棟百貨裡逛逛，購物、喝杯咖啡都方便，不用再多跑一趟。</p></div>
+
+  <div class="period">🌃 晚上</div>
+  <div class="card"><h3>The Bay 101 <span class="tag opt">彈性行程</span></h3><p>釜山超人氣夜景勝地，可拍到經典的「高樓大廈水影倒影」（利用地板積水或手機鏡頭倒置拍照）。戶外廣場適合吹海風、喝杯咖啡，有時間就來走走。</p></div>
+  <div class="card"><h3>廣安里海水浴場</h3><p>搭地鐵或計程車前往，夜裡欣賞廣安大橋的燈光秀，海面倒映著光影，非常迷人。</p></div>
+  <div class="card eat"><h3>🍽️ 晚餐</h3><p>品嚐熱騰騰的<b>韓式豬肉湯飯</b>，溫和暖胃，為充實的一天畫下句點。</p></div>
+</section>
+
+<!-- Day 3 -->
+<section class="day" id="d3">
+  <div class="day-head"><span class="no">DAY 3</span>
+    <h2>機張海線・沉浸藝術</h2>
+    <p class="teaser">上午追著海風玩滑車、逛古寺、吃雪蟹；下午躲進光影藝術館吹冷氣——刺激與優雅一次擁有。</p></div>
+  <div class="route">西面出發 ➔ <a href="https://www.google.com/maps/search/?api=1&query=Skyline%20Luge%20Busan" target="_blank" rel="noopener">Skyline Luge 斜坡滑車</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=海東龍宮寺%20釜山" target="_blank" rel="noopener">海東龍宮寺</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=機張市場%20釜山" target="_blank" rel="noopener">機張市場</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=Museum1%20Busan" target="_blank" rel="noopener">釜山 Museum 1</a> ➔ 回西面<br><small>🔥 Pass 第 2 天｜東北角與市區｜從西面出發往東北角的機張，交通便利</small></div>
+
+  <div class="period">☀️ 上午（機張海線）</div>
+  <div class="card"><h3>Skyline Luge 斜坡滑車 <span class="tag pass">Pass 免費</span></h3><p>先搭吊椅上山，再乘滑車順著斜坡一路俯衝而下，刺激又好玩，大人小孩都停不下來。</p></div>
+  <div class="card"><h3>海東龍宮寺 <span class="tag free">免門票</span></h3><p>依海而建的千年古寺，海浪聲伴著古剎，景色獨一無二。入口有石階，放慢腳步慢慢走更能欣賞。<br><small>※ 此景點免門票，不需用 Pass。</small></p></div>
+  <div class="card eat"><h3>🍽️ 機張市場・午餐</h3><p>品嚐熱騰騰、完全煮熟的<b>機張大隻雪蟹</b>，最後別忘了用蟹膏加白飯炒成香氣十足的<b>蟹膏炒飯</b>，豐盛又滿足。</p></div>
+
+  <div class="period">🎨 下午（順路回市區）</div>
+  <div class="card"><h3>釜山 Museum 1 <span class="tag pass">Pass 免費</span></h3><p>大型現代媒體藝術美術館，全場沉浸式視覺投影，彷彿走進會流動的畫裡。室內吹冷氣看展，完全不用走很多路。</p></div>
+  <div class="card"><h3>回西面悠閒休息</h3><p>傍晚回到西面，可在西面商圈或飯店附近自由逛逛、補充體力。</p></div>
+
+  <div class="period">🌙 晚餐</div>
+  <div class="card eat"><h3>🍗 橋村炸雞 Kyochon Chicken</h3><p>高溫現炸、外皮酥脆的橋村炸雞，香酥多汁，是旅途中最過癮的一餐。</p></div>
+</section>
+
+<!-- Day 4 -->
+<section class="day" id="d4">
+  <div class="day-head"><span class="no">DAY 4</span>
+    <h2>松島纜車・甘川文化村</h2>
+    <p class="teaser">凌空飛越海面，再走進繽紛的山城彩色小屋；最後一天，把釜山最經典的畫面裝進相機帶回家。</p></div>
+  <div class="route">西面出發 ➔ <a href="https://www.google.com/maps/search/?api=1&query=松島海上纜車%20釜山" target="_blank" rel="noopener">松島海上纜車</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=甘川文化村%20釜山" target="_blank" rel="noopener">甘川文化村</a> ➔ 午餐（松島／南浦洞） ➔ 前往機場或車站<br><small>🔥 Pass 壓線使用｜西南側｜從西面搭 1 號線直達南浦／松島方向</small></div>
+
+  <div class="period">☀️ 上午（Pass 壓線免費使用）</div>
+  <div class="card"><h3>松島海上纜車 <span class="tag pass">Pass 免費</span></h3><p>搭乘纜車橫跨海面（可選擇水晶車廂，腳下就是大海），視野極佳又完全不費力。抵達後還能逛逛天空步道。</p></div>
+  <div class="card"><h3>甘川文化村</h3><p>離松島非常近！建議<b>搭計程車直接上山到村莊高處，再「一路往下走」</b>，沿途欣賞層層疊疊的彩色小屋與巷弄藝術，輕鬆不費力。</p></div>
+  <div class="tip"><b>💡 Pass 超值福利</b><br>憑 48 小時 Busan Pass，在甘川文化村可<b>免費兌換韓服體驗 1 小時</b>，或<b>免費製作專屬手翻書（Flipbook）</b>紀念品！時間允許的話別忘了去兌換。</div>
+
+  <div class="period">🍜 午餐</div>
+  <div class="card eat"><h3>松島或南浦洞</h3><p>享用熱呼呼的<b>海鮮烏龍麵</b>，或溫和的<b>蔬菜雞肉粥</b>，為旅程留下暖暖的回憶。</p></div>
+
+  <div class="period">✈️ 下午</div>
+  <div class="card"><h3>快樂返程</h3><p>結束行程後，從西面或南浦出發前往機場或車站。期待下次再見，釜山！</p></div>
+</section>
+
+</main>
+
+<footer>祝您旅途愉快 · 釜山見！🌊</footer>
+
+<script>
+(function(){
+  var links=document.querySelectorAll('#tabs a');
+  function show(id){
+    document.querySelectorAll('.day').forEach(function(d){d.classList.toggle('on',d.id===id)});
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+id)});
+  }
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      show(a.getAttribute('href').slice(1));
+      window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+    });
+  });
+  var h=location.hash.slice(1);
+  if(/^d[1-4]$/.test(h)) show(h);
+})();
+</script>
+</body>
+</html>

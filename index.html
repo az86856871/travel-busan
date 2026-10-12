@@ -21,6 +21,16 @@ body{margin:0;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans
 .fact{background:var(--card);border-radius:14px;padding:16px 18px;box-shadow:0 6px 18px rgba(11,127,171,.12)}
 .fact b{display:block;color:var(--primary-d);margin-bottom:4px}
 .fact span{color:var(--muted);font-size:.93rem}
+.flight{background:var(--card);border-radius:14px;padding:16px 18px;margin-bottom:24px;border:1px solid var(--line);color:var(--muted);font-size:.93rem}
+.flight>b{display:block;color:var(--primary-d);margin-bottom:8px}
+.flight .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.flight em{display:block;font-style:normal;font-weight:700;color:var(--ink);margin-bottom:4px}
+.flight .price{color:var(--card);margin-left:4px}
+.flight .price::selection{background:var(--primary-d);color:#fff}
+.flight p{margin:6px 0 0}
+.flight .dt{display:inline-block;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;padding:1px 10px;margin-right:8px}
+.flight .tm{font-size:1.35rem;font-weight:700;color:var(--primary-d)}
+.flight small{display:block;margin-top:2px}
 nav{position:sticky;top:0;z-index:10;background:rgba(244,249,252,.95);backdrop-filter:blur(6px);padding:10px 0;border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;gap:8px;overflow-x:auto}
 nav a{flex:1 0 auto;text-align:center;padding:8px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--primary-d);text-decoration:none;font-weight:600;white-space:nowrap}
@@ -64,6 +74,17 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
     <div class="fact"><b>🎫 48 小時 Busan Pass</b><span>Day 2 上午啟用，一路用到 Day 4 上午，景點玩得划算。</span></div>
     <div class="fact"><b>🍲 吃得暖、吃得安心</b><span>以熟食、豬肉、海鮮、雞肉與連鎖餐廳為主，餐餐熱騰騰。</span></div>
   </section>
+  <section class="flight">
+    <b>✈️ 暫定航班（二選一，皆直達）</b>
+    <div class="opts">
+      <div><em>方案 A｜中華航空・大韓航空　<span class="price">$13,426</span></em>
+        <p><span class="dt">去程 4/21（三）</span><span class="tm">07:55 ➔ 11:15</span><small>TPE ➔ PUS・2 小時 20 分</small></p>
+        <p><span class="dt">回程 4/24（六）</span><span class="tm">20:00 ➔ 21:20</span><small>PUS ➔ TPE・2 小時 20 分</small></p></div>
+      <div><em>方案 B｜中華航空　<span class="price">$12,346</span></em>
+        <p><span class="dt">去程 4/21（三）</span><span class="tm">06:15 ➔ 09:30</span><small>TPE ➔ PUS・2 小時 15 分</small></p>
+        <p><span class="dt">回程 4/24（六）</span><span class="tm">20:00 ➔ 21:20</span><small>PUS ➔ TPE・2 小時 20 分</small></p></div>
+    </div>
+  </section>
 </div>
 
 <nav><div class="wrap" id="tabs">
@@ -77,21 +98,22 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
   <div class="day-head"><span class="no">DAY 1</span>
     <h2>抵達釜山・南浦洞暖心逛街</h2>
     <p class="teaser">落地先不急著衝刺，把行李放下、吃碗熱湯，再到港邊市場感受釜山的生活味道。</p></div>
-  <div class="route">抵達釜山 ➔ 西面飯店 Check-in ➔ <a href="https://www.google.com/maps/search/?api=1&query=富平罐頭市場%20釜山" target="_blank" rel="noopener">富平罐頭市場</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=札嘎其市場%20釜山" target="_blank" rel="noopener">札嘎其市場</a> ➔ <a href="https://maps.app.goo.gl/R9k9xuAm42h5nhDX8" target="_blank" rel="noopener">KPOP FRIENDS 南浦店</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=樂天百貨光復店%20釜山" target="_blank" rel="noopener">樂天百貨光復店空中花園</a></div>
+  <div class="route">抵達釜山 ➔ 西面飯店 Check-in ➔ <a href="https://www.google.com/maps/search/?api=1&query=札嘎其市場%20釜山" target="_blank" rel="noopener">札嘎其市場</a>（午餐）➔ <a href="https://www.google.com/maps/search/?api=1&query=BIFF廣場%20釜山" target="_blank" rel="noopener">BIFF 廣場</a>（點心）➔ <a href="https://maps.app.goo.gl/R9k9xuAm42h5nhDX8" target="_blank" rel="noopener">KPOP FRIENDS 南浦店</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=樂天百貨光復店%20釜山" target="_blank" rel="noopener">樂天百貨光復店空中花園</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=富平罐頭市場%20釜山" target="_blank" rel="noopener">富平罐頭市場夜市</a> ➔ 樂天百貨超市</div>
 
   <div class="period">☀️ 下午</div>
   <div class="card"><h3>西面飯店 Check-in</h3><p>抵達後先到西面飯店放行李、稍作休息，用最輕鬆的狀態展開旅程。</p></div>
-  <div class="card eat"><h3>🍽️ 午餐推薦（西面）</h3><p>來一碗熱騰騰的<b>豬肉湯飯</b>，豬大骨熬出的濃郁湯頭配全熟豬肉片，是釜山人的靈魂美食；也可以到西面市場嚐嚐<b>手工刀削麵</b>。</p></div>
 
-  <div class="period">🛍️ 南浦洞室內輕鬆逛</div>
-  <div class="card"><h3>搭 1 號線直達南浦洞</h3><p>約 15 分鐘就到，不用轉車。</p></div>
-  <div class="card"><h3>富平罐頭市場</h3><p>挑一件溫暖又實惠的韓國棉被，買完可請店家直接打包或寄送回飯店，雙手輕鬆繼續逛。</p></div>
-  <div class="card"><h3>札嘎其市場</h3><p>室內大型海鮮市場，滿滿的海味與市井活力，純粹散步看熱鬧也很過癮。</p></div>
+  <div class="period">🛍️ 南浦洞輕鬆逛</div>
+  <div class="card"><h3>富平罐頭市場・韓國棉被 <span class="tag opt">想買才去</span></h3><p>棉被店白天才營業，想買的話請在白天先來一趟：挑一件溫暖又實惠的韓國棉被，買完可請店家直接打包或寄送回飯店。晚上再回來逛夜市。<br><small>※ 也可以改在 Day 4 下午再去買。</small></p></div>
+  <div class="card eat"><h3>🍽️ 札嘎其市場・午餐</h3><p>室內大型海鮮市場，滿滿的海味與市井活力，午餐就在這裡享用海鮮，也可以純粹散步看熱鬧。</p></div>
+  <div class="card"><h3>BIFF 廣場</h3><p>釜山國際電影節的發源地，路邊小吃攤林立，來一份熱騰騰的黑糖餅，邊走邊吃當作下午點心。</p></div>
   <div class="card"><h3>KPOP FRIENDS 南浦店</h3><p>逛逛 K-pop 周邊小物店，挑選喜歡的偶像專輯與紀念品。</p></div>
 
   <div class="period">🌇 傍晚與晚餐</div>
   <div class="card"><h3>樂天百貨光復店・空中花園</h3><p>登上頂樓空中花園，眺望釜山港黃昏與影島大橋，天色漸暗、燈火亮起，是第一天最浪漫的收尾。</p></div>
-  <div class="card eat"><h3>🍽️ 晚餐</h3><p>回到西面後若肚子微餓，可在飯店附近的連鎖超商（CU / GS25）購買包裝完整的熱食、麵包或瓶裝水，輕鬆又方便。</p></div>
+  <div class="card"><h3>富平罐頭市場・夜市 <span class="tag opt">19:20 出發逛</span></h3><p>越晚越熱鬧的夜市，天黑後攤位陸續亮燈，各式異國美食邊逛邊吃。推薦嚐嚐<b>辣炒年糕</b>、<b>油豆腐包</b>與<b>釜山魚板</b>，都是熱騰騰的熟食。<br><small>※ 夜市約 19:30–23:00（部分攤位 19:00 左右開始），市場是一條直路，來回約 20 分鐘。</small></p></div>
+  <div class="card"><h3>樂天百貨超市</h3><p>最後到樂天百貨的超市挑選想吃的東西，順便買零食與伴手禮，再回西面休息。</p></div>
+  <div class="card eat"><h3>🍽️ 晚餐</h3><p>晚餐就在富平夜市邊逛邊吃；想回飯店慢慢吃的話，可以在夜市買一些帶回去，或到樂天百貨超市挑選想吃的東西。</p></div>
 </section>
 
 <!-- Day 2 -->
@@ -128,10 +150,10 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
   <div class="period">☀️ 上午（機張海線）</div>
   <div class="card"><h3>Skyline Luge 斜坡滑車 <span class="tag pass">Pass 免費</span></h3><p>先搭吊椅上山，再乘滑車順著斜坡一路俯衝而下，刺激又好玩，大人小孩都停不下來。</p></div>
   <div class="card"><h3>海東龍宮寺 <span class="tag free">免門票</span></h3><p>依海而建的千年古寺，海浪聲伴著古剎，景色獨一無二。入口有石階，放慢腳步慢慢走更能欣賞。<br><small>※ 此景點免門票，不需用 Pass。</small></p></div>
-  <div class="card eat"><h3>🍽️ 機張市場・午餐</h3><p>品嚐熱騰騰、完全煮熟的<b>機張大隻雪蟹</b>，最後別忘了用蟹膏加白飯炒成香氣十足的<b>蟹膏炒飯</b>，豐盛又滿足。</p></div>
+  <div class="card eat"><h3>🍽️ 機張市場・午餐</h3><p>品嚐熱騰騰、完全煮熟的<b>機張大隻雪蟹</b>，最後別忘了用蟹膏加白飯炒成香氣十足的<b>蟹膏炒飯</b>，豐盛又滿足。<br><small>🚕 海東龍宮寺 ➔ 機張市場：建議搭 Uber。</small></p></div>
 
   <div class="period">🌃 下午至傍晚（順路回市區）</div>
-  <div class="card"><h3>The Bay 101 <span class="tag opt">彈性行程</span></h3><p>釜山超人氣夜景勝地，可拍到經典的「高樓大廈水影倒影」（利用地板積水或手機鏡頭倒置拍照）。戶外廣場適合吹海風、喝杯咖啡，有時間就來走走。</p></div>
+  <div class="card"><h3>The Bay 101 <span class="tag opt">彈性行程</span></h3><p>釜山超人氣夜景勝地，可拍到經典的「高樓大廈水影倒影」（利用地板積水或手機鏡頭倒置拍照）。戶外廣場適合吹海風、喝杯咖啡，有時間就來走走。<br><small>🚕 機張市場 ➔ The Bay 101：建議搭 Uber。</small></p></div>
   <div class="card"><h3>日落遊艇（二選一） <span class="tag opt">彈性行程</span><span class="tag paid">需預約</span></h3><p>日落前後搭乘遊艇，從海上欣賞廣安大橋，依出發地點、費用與場次擇一搭乘。<br><b>Yacht Holic</b>：廣安里海灘旁出發（廣安里海洋休閒中心），付費，有 8 折優惠。<br><b>Diamond Bay</b> <span class="tag pass">有 Pass 券</span>：南區龍湖灣遊覽船碼頭出發，不在廣安里海灘旁，需另外安排交通。</p></div>
   <div class="card"><h3>廣安里海水浴場 <span class="tag opt">備案</span></h3><p>若日落遊艇時間搭配不上、無法搭乘，再前往。與 The Bay 101 有一段距離，建議搭計程車，出發前用地圖確認時間。夜裡欣賞廣安大橋的燈光秀，海面倒映著光影，非常迷人。</p></div>
 
@@ -144,17 +166,18 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
   <div class="day-head"><span class="no">DAY 4</span>
     <h2>松島纜車・甘川文化村</h2>
     <p class="teaser">凌空飛越海面，再走進繽紛的山城彩色小屋；最後一天，把釜山最經典的畫面裝進相機帶回家。</p></div>
-  <div class="route">西面出發 ➔ <a href="https://www.google.com/maps/search/?api=1&query=松島海上纜車%20釜山" target="_blank" rel="noopener">松島海上纜車</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=甘川文化村%20釜山" target="_blank" rel="noopener">甘川文化村</a> ➔ 午餐（松島／南浦洞） ➔ 前往機場或車站<br><small>🔥 Pass 壓線使用｜西南側｜從西面搭 1 號線直達南浦／松島方向</small></div>
+  <div class="route">西面出發 ➔ <a href="https://www.google.com/maps/search/?api=1&query=松島海上纜車%20釜山" target="_blank" rel="noopener">松島海上纜車</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=甘川文化村%20釜山" target="_blank" rel="noopener">甘川文化村</a> ➔ 午餐（松島／南浦洞） ➔ <a href="https://www.google.com/maps/search/?api=1&query=富平罐頭市場%20釜山" target="_blank" rel="noopener">富平罐頭市場</a>（想買棉被才去）➔ 前往機場或車站<br><small>🔥 Pass 壓線使用｜西南側｜從西面搭 1 號線直達南浦／松島方向</small></div>
 
   <div class="period">☀️ 上午（Pass 壓線免費使用）</div>
   <div class="card"><h3>松島海上纜車 <span class="tag pass">Pass 免費</span></h3><p>搭乘纜車橫跨海面（可選擇水晶車廂，腳下就是大海），視野極佳又完全不費力。抵達後還能逛逛天空步道。</p></div>
-  <div class="card"><h3>甘川文化村</h3><p>離松島非常近！建議<b>搭計程車直接上山到村莊高處，再「一路往下走」</b>，沿途欣賞層層疊疊的彩色小屋與巷弄藝術，輕鬆不費力。</p></div>
+  <div class="card"><h3>甘川文化村</h3><p>離松島非常近！建議<b>搭計程車直接上山到村莊高處，再「一路往下走」</b>，沿途欣賞層層疊疊的彩色小屋與巷弄藝術，輕鬆不費力。<br><small>🚕 松島海上纜車 ➔ 甘川文化村：建議搭 Uber。</small></p></div>
   <div class="tip"><b>💡 Pass 超值福利</b><br>憑 48 小時 Busan Pass，在甘川文化村可<b>免費兌換韓服體驗 1 小時</b>，或<b>免費製作專屬手翻書（Flipbook）</b>紀念品！時間允許的話別忘了去兌換。</div>
 
   <div class="period">🍜 午餐</div>
   <div class="card eat"><h3>松島或南浦洞</h3><p>享用熱呼呼的<b>海鮮烏龍麵</b>，或溫和的<b>蔬菜雞肉粥</b>，為旅程留下暖暖的回憶。</p></div>
 
   <div class="period">✈️ 下午</div>
+  <div class="card"><h3>富平罐頭市場・韓國棉被 <span class="tag opt">想買才去</span></h3><p>想買韓國棉被的話，可以改在最後一天下午來，不用第一天趕在店家打烊前挑選。買完可請店家直接打包，方便帶上飛機。</p></div>
   <div class="card"><h3>快樂返程</h3><p>結束行程後，從西面或南浦出發前往機場或車站。期待下次再見，釜山！</p></div>
 </section>
 

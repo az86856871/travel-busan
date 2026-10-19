@@ -41,7 +41,11 @@ footer{text-align:center;color:var(--muted);padding:20px 16px 40px;font-size:.9r
  td[data-l]:not(.t)::before{content:attr(data-l) "：";color:var(--muted);font-size:.8rem}
  td:nth-child(2){font-weight:600}td:nth-child(2)::before{content:none}
 }
-@media print{nav,.ver{display:none}.vsec{display:block!important}.day{display:block!important;page-break-inside:avoid}}</style>
+.plans{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 8px}
+.plans button{font:inherit;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--primary-d);border-radius:999px;padding:4px 14px;font-weight:600}
+.plans button.on{background:var(--primary);border-color:var(--primary);color:#fff}
+.ph{display:none}
+@media print{nav,.ver,.plans{display:none}.vsec{display:block!important}.day{display:block!important;page-break-inside:avoid}.ph{display:block!important}}</style>
 </head>
 <body>
 <header class="hero"><a class="back" href="index.html">← 回首頁</a><h1>釜山 4天3夜・每日時間表</h1><p>先選航空版本，再點 Day 切換；時間為推算值，出發前請再確認</p></header>
@@ -134,9 +138,32 @@ footer{text-align:center;color:var(--muted);padding:20px 16px 40px;font-size:.9r
   links.forEach(function(a){a.addEventListener('click',function(e){
     e.preventDefault();cur.d=a.getAttribute('href').slice(1);render();window.scrollTo({top:0,behavior:'smooth'});
   })});
-  var h=location.hash.slice(1),m=h.match(/^([a-z]+)-(d[1-4])$/)||h.match(/^()(d[1-4])$/);
+  var h=location.hash.slice(1),m=h.match(/^([a-z0-9]+)-(d[1-9])$/)||h.match(/^()(d[1-9])$/);
   if(m){if(m[1]&&ids.indexOf(m[1])>=0)cur.v=m[1];cur.d=m[2]}
   render();
+  // 同一天有多個「方案」小標題時，改成按鈕切換
+  document.querySelectorAll('.day').forEach(function(d){
+    var hs=[].filter.call(d.querySelectorAll('h3'),function(h){return /^方案/.test(h.textContent)});
+    if(hs.length<2)return;
+    var groups=hs.map(function(h){
+      var els=[h],n=h.nextElementSibling;
+      while(n&&n.tagName!=='H3'){els.push(n);n=n.nextElementSibling}
+      return els;
+    });
+    var bar=document.createElement('div');bar.className='plans';
+    function pick(i){
+      groups.forEach(function(g,k){g.forEach(function(el){el.classList.toggle('ph',k!==i)})});
+      [].forEach.call(bar.children,function(b,k){b.classList.toggle('on',k===i)});
+    }
+    hs.forEach(function(h,i){
+      var b=document.createElement('button');b.type='button';
+      b.textContent=h.textContent.split('：')[0];
+      b.addEventListener('click',function(){pick(i)});
+      bar.appendChild(b);
+    });
+    hs[0].parentNode.insertBefore(bar,hs[0]);
+    pick(0);
+  });
 })();</script>
 </body>
 </html>

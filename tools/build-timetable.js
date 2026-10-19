@@ -1,6 +1,6 @@
 // 把 timetable/ 裡的 md 轉成時間表網頁。
 // 用法（在專案根目錄）：node tools/build-timetable.js
-// 產生：timetable.html（兩版合併）、timetable-hua.html、timetable-lcc.html
+// 產生：timetable.html（兩版合併）、timetable-hua.html、timetable-lcc.html、timetable-5d.html（5天4夜）
 const fs = require('fs');
 const path = require('path');
 
@@ -8,9 +8,10 @@ const ROOT = path.join(__dirname, '..');
 const FOOTER = '祝您旅途愉快 · 釜山見！🌊';
 
 const VERSIONS = [
-  { id: 'lcc', name: '廉價航空版' },
-  { id: 'hua', name: '中華航空版' },
+  { id: 'lcc', name: '廉價航空版', count: 4, label: '釜山 4天3夜' },
+  { id: 'hua', name: '中華航空版', count: 4, label: '釜山 4天3夜' },
 ];
+const V5 = { id: '5d', name: '易斯達版', count: 5, label: '釜山 5天4夜' };
 
 // ---------- md -> html ----------
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -55,8 +56,8 @@ function convert(md) {
   return { title, html: out.join('\n') };
 }
 
-for (const v of VERSIONS) {
-  v.days = [1, 2, 3, 4].map(n => ({
+for (const v of [...VERSIONS, V5]) {
+  v.days = Array.from({ length: v.count }, (_, k) => k + 1).map(n => ({
     n,
     ...convert(fs.readFileSync(path.join(ROOT, 'timetable', `day${n}-${v.id}.md`), 'utf8')),
   }));
@@ -100,7 +101,11 @@ footer{text-align:center;color:var(--muted);padding:20px 16px 40px;font-size:.9r
  td[data-l]:not(.t)::before{content:attr(data-l) "：";color:var(--muted);font-size:.8rem}
  td:nth-child(2){font-weight:600}td:nth-child(2)::before{content:none}
 }
-@media print{nav,.ver{display:none}.vsec{display:block!important}.day{display:block!important;page-break-inside:avoid}}`;
+.plans{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 8px}
+.plans button{font:inherit;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--primary-d);border-radius:999px;padding:4px 14px;font-weight:600}
+.plans button.on{background:var(--primary);border-color:var(--primary);color:#fff}
+.ph{display:none}
+@media print{nav,.ver,.plans{display:none}.vsec{display:block!important}.day{display:block!important;page-break-inside:avoid}.ph{display:block!important}}`;
 
 const SCRIPT = `(function(){
   var vers=document.querySelectorAll('#vers button'),links=document.querySelectorAll('#tabs a');
@@ -124,16 +129,41 @@ const SCRIPT = `(function(){
   links.forEach(function(a){a.addEventListener('click',function(e){
     e.preventDefault();cur.d=a.getAttribute('href').slice(1);render();window.scrollTo({top:0,behavior:'smooth'});
   })});
-  var h=location.hash.slice(1),m=h.match(/^([a-z]+)-(d[1-4])$/)||h.match(/^()(d[1-4])$/);
+  var h=location.hash.slice(1),m=h.match(/^([a-z0-9]+)-(d[1-9])$/)||h.match(/^()(d[1-9])$/);
   if(m){if(m[1]&&ids.indexOf(m[1])>=0)cur.v=m[1];cur.d=m[2]}
   render();
+  // 同一天有多個「方案」小標題時，改成按鈕切換
+  document.querySelectorAll('.day').forEach(function(d){
+    var hs=[].filter.call(d.querySelectorAll('h3'),function(h){return /^方案/.test(h.textContent)});
+    if(hs.length<2)return;
+    var groups=hs.map(function(h){
+      var els=[h],n=h.nextElementSibling;
+      while(n&&n.tagName!=='H3'){els.push(n);n=n.nextElementSibling}
+      return els;
+    });
+    var bar=document.createElement('div');bar.className='plans';
+    function pick(i){
+      groups.forEach(function(g,k){g.forEach(function(el){el.classList.toggle('ph',k!==i)})});
+      [].forEach.call(bar.children,function(b,k){b.classList.toggle('on',k===i)});
+    }
+    hs.forEach(function(h,i){
+      var b=document.createElement('button');b.type='button';
+      b.textContent=h.textContent.split('：')[0];
+      b.addEventListener('click',function(){pick(i)});
+      bar.appendChild(b);
+    });
+    hs[0].parentNode.insertBefore(bar,hs[0]);
+    pick(0);
+  });
 })();`;
 
 // ---------- 組頁 ----------
 function page({ versions, heading, backHref }) {
   const multi = versions.length > 1;
-  const titleText = multi ? '釜山 4天3夜 每日時間表' : `釜山 4天3夜 每日時間表（${versions[0].name}）`;
-  const h1 = multi ? '釜山 4天3夜・每日時間表' : `釜山 4天3夜・每日時間表（${versions[0].name}）`;
+  const label = versions[0].label;
+  const count = versions[0].days.length;
+  const titleText = multi ? `${label} 每日時間表` : `${label} 每日時間表（${versions[0].name}）`;
+  const h1 = multi ? `${label}・每日時間表` : `${label}・每日時間表（${versions[0].name}）`;
   const sub = multi ? '先選航空版本，再點 Day 切換；時間為推算值，出發前請再確認' : '點上方 Day 切換，時間為推算值，出發前請再確認';
   return `<!DOCTYPE html>
 <html lang="zh-Hant">
@@ -145,7 +175,7 @@ function page({ versions, heading, backHref }) {
 </head>
 <body>
 <header class="hero"><a class="back" href="${backHref}">← 回首頁</a><h1>${h1}</h1><p>${sub}</p></header>
-${multi ? `<div class="ver"><div class="wrap" id="vers">${versions.map((v, i) => `<button type="button" data-v="${v.id}"${i === 0 ? ' class="on"' : ''}>${v.name}</button>`).join('')}</div></div>\n` : ''}<nav><div class="wrap" id="tabs">${[1, 2, 3, 4].map(n => `<a href="#d${n}"${n === 1 ? ' class="on"' : ''}>Day ${n}</a>`).join('')}</div></nav>
+${multi ? `<div class="ver"><div class="wrap" id="vers">${versions.map((v, i) => `<button type="button" data-v="${v.id}"${i === 0 ? ' class="on"' : ''}>${v.name}</button>`).join('')}</div></div>\n` : ''}<nav><div class="wrap" id="tabs">${Array.from({ length: count }, (_, k) => k + 1).map(n => `<a href="#d${n}"${n === 1 ? ' class="on"' : ''}>Day ${n}</a>`).join('')}</div></nav>
 <main class="wrap">
 ${versions.map((v, i) => `<div class="vsec${i === 0 ? ' on' : ''}" id="v-${v.id}">${v.days.map(d => `<section class="day${d.n === 1 ? ' on' : ''}" data-d="d${d.n}">
 <h2>${esc(d.title)}</h2>
@@ -168,3 +198,4 @@ write('timetable.html', page({ versions: VERSIONS, backHref: 'index.html' }));
 for (const v of VERSIONS) {
   write(`timetable-${v.id}.html`, page({ versions: [v], backHref: 'index.html' }));
 }
+write('timetable-5d.html', page({ versions: [V5], backHref: 'index.html' }));

@@ -31,6 +31,7 @@ a.item i{display:inline-block;font-style:normal;font-size:.75rem;font-weight:700
 .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-top:6px}
 .panel p{margin:0 0 6px;color:var(--muted);font-size:.93rem}
 .panel a{display:inline-block;margin:2px 10px 2px 0;color:var(--primary-d);font-weight:600}
+body:not(.me) .mine{display:none}
 footer{text-align:center;color:var(--muted);padding:20px 16px 50px;font-size:.9rem}
 @media(max-width:480px){.hero h1 .big{font-size:2rem}.hero h1 .sub{font-size:.9rem}.hero p{font-size:.8rem}}
 </style>
@@ -54,11 +55,11 @@ footer{text-align:center;color:var(--muted);padding:20px 16px 50px;font-size:.9r
       <a class="item" href="itinerary-hua.html"><b>中華航空版<i>行程</i></b><span>中華航空／大韓航空直飛。<br>四天玩遍釜山：南浦洞夜市、海雲台海岸列車、機張雪蟹與遊艇夜海，最後一天逛甘川彩色小屋、搭松島纜車。</span></a>
       <a class="item" href="itinerary-lcc.html"><b>廉價航空版<i>行程</i></b><span>易斯達航空／台灣虎航直飛。<br>四天玩遍釜山：抵達就去甘川遇見小王子，再逛南浦洞夜市、海雲台海岸列車、機張雪蟹與遊艇夜海，最後搭松島纜車。</span></a>
     </div>
-    <h3>🕐 每日時間表</h3>
-    <div class="pick">
+    <h3 class="mine">🕐 每日時間表</h3>
+    <div class="pick mine">
       <a class="item" href="timetable.html"><b>每日時間表<i>點選切換</i></b><span>兩個航班版本都在同一頁，先選版本，再點 Day 1 到 Day 4 切換。</span></a>
     </div>
-    <div class="panel">
+    <div class="panel mine">
       <p>只想看單一版本的時間表：</p>
       <a href="timetable-hua.html">中華航空版時間表</a><a href="timetable-lcc.html">廉價航空版時間表</a>
     </div>
@@ -69,8 +70,8 @@ footer{text-align:center;color:var(--muted);padding:20px 16px 50px;font-size:.9r
     <div class="pick">
       <a class="item" href="itinerary-5d.html"><b>易斯達版<i>行程</i></b><span>易斯達航空直飛，多一天更輕鬆。<br>南浦洞、海雲台、機張雪蟹與遊艇、松島纜車與影島大橋開橋，最後一天逛西面，慢慢返程。</span></a>
     </div>
-    <h3>🕐 每日時間表</h3>
-    <div class="pick">
+    <h3 class="mine">🕐 每日時間表</h3>
+    <div class="pick mine">
       <a class="item" href="timetable-5d.html"><b>每日時間表<i>易斯達版</i></b><span>Day 1 到 Day 5 每日時間表。</span></a>
     </div>
     </div>
@@ -84,6 +85,9 @@ footer{text-align:center;color:var(--muted);padding:20px 16px 50px;font-size:.9r
 <footer>願你把釜山的海風、美食與好心情，都帶回家 🌊</footer>
 <script>
 (function(){
+  // 每日時間表只給自己看：網址有 ?me=1 才顯示，不記錄，重開不帶參數就會隱藏
+  if(/[?&]me=1/.test(location.search))document.body.classList.add('me');
+  try{localStorage.removeItem('busan-me')}catch(x){}
   var btns=document.querySelectorAll('#trips button');
   function show(k){
     btns.forEach(function(b){b.classList.toggle('on',b.getAttribute('data-trip')===k)});

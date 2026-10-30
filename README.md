@@ -19,6 +19,9 @@
 | `timetable-hua.html` | 每日時間表：中華航空版 |
 | `timetable-lcc.html` | 每日時間表：廉價航空版 |
 | `itinerary-5d.html` | 行程：5 天 4 夜（易斯達版） |
+| `itinerary-5d-storybook.html` | 行程：5 天 4 夜（易斯達版）繪本風，含出發倒數、時間軸、待辦清單（勾選只存在各自瀏覽器）與住宿資訊 |
+| `itinerary-5d-alt.html` | 行程：5 天 4 夜（易斯達版）備案，Day 2 海岸列車到松亭＋機張，Day 3 海理團路＋汗蒸幕＋遊艇＋廣安里晚餐，Day 4 松島＋影島開橋＋白淺灘＋ARTE MUSEUM＋烤肉 |
+| `timetable-5d-alt.html` | 每日時間表：5 天 4 夜（易斯達版）備案，由 `day2-1-5d.md`、`day3-1-5d.md`、`day4-1-5d.md` 轉出 |
 | `timetable-5d.html` | 每日時間表：5 天 4 夜（易斯達版） |
 | `pass-calculator.html` | 釜山 PASS 省錢計算（單人成人價，比較 24H／48H／BIG3／BIG5 與單買） |
 | `md/VISIT_BUSAN_PASS_景點區域與價格.md` | PASS 景點（A、B 組）的區域與官網價格 |

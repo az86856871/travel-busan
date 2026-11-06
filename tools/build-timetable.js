@@ -5,6 +5,11 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
+const MAPS5ALT = require('./maps-5d-alt.js');
+const { renderMap } = require('./render-map.js');
+const MAP_DATA = path.join(__dirname, 'map-data');
+// 每日小地圖是直接嵌在頁面裡的靜態 SVG（不需要網路）；底圖資料由 fetch-map-data.js 事先抓好
+const MAP_CSS = `.daymap{margin:0 0 18px}.daymap .cap{font-size:.85rem;color:var(--muted);margin:0 2px 8px}.daymap svg{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 4px 14px rgba(11,127,171,.16)}`;
 const FOOTER = '祝您旅途愉快 · 釜山見！🌊';
 
 const VERSIONS = [
@@ -12,6 +17,8 @@ const VERSIONS = [
   { id: 'hua', name: '中華航空版', count: 4, label: '釜山 4天3夜' },
 ];
 const V5 = { id: '5d', name: '易斯達版', count: 5, label: '釜山 5天4夜' };
+// 備案：Day 2、Day 3 改讀 day2-1-5d.md、day3-1-5d.md，其餘天數沿用原本的檔案
+const V5ALT = { id: '5d', name: '易斯達版・備案', count: 5, label: '釜山 5天4夜', alt: { 2: 'day2-1-5d.md', 3: 'day3-1-5d.md', 4: 'day4-1-5d.md' } };
 
 // ---------- md -> html ----------
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -56,10 +63,10 @@ function convert(md) {
   return { title, html: out.join('\n') };
 }
 
-for (const v of [...VERSIONS, V5]) {
+for (const v of [...VERSIONS, V5, V5ALT]) {
   v.days = Array.from({ length: v.count }, (_, k) => k + 1).map(n => ({
     n,
-    ...convert(fs.readFileSync(path.join(ROOT, 'timetable', `day${n}-${v.id}.md`), 'utf8')),
+    ...convert(fs.readFileSync(path.join(ROOT, 'timetable', (v.alt && v.alt[n]) || `day${n}-${v.id}.md`), 'utf8')),
   }));
 }
 
@@ -84,11 +91,12 @@ nav a.on{background:var(--primary);color:#fff;border-color:var(--primary)}
 .day h2{margin:0 0 10px;font-size:1.4rem;color:var(--primary-d)}
 .day h3{margin:26px 0 8px;color:var(--primary);font-size:1.05rem}
 .note{background:#fff6ec;border-left:5px solid var(--accent);border-radius:10px;padding:10px 14px;margin:0 0 16px;color:#34495a;font-size:.93rem}
-.tw{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:12px}
+.tw{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow-x:auto;margin-bottom:12px}
 table{width:100%;border-collapse:collapse;font-size:.95rem}
 th{background:#e6f4fa;color:var(--primary-d);text-align:left;padding:8px 12px;white-space:nowrap}
 td{padding:9px 12px;border-top:1px solid var(--line);vertical-align:top}
 td.t{font-weight:700;color:var(--primary-d);white-space:nowrap}
+@media(min-width:601px){td:not(.t){min-width:9em}}
 td:nth-child(3){color:var(--muted);font-size:.9rem}
 ul{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px 12px 34px;margin:0}
 li{margin:4px 0}code{background:#eef4f8;border-radius:4px;padding:1px 5px}
@@ -157,8 +165,21 @@ const SCRIPT = `(function(){
   });
 })();`;
 
+// ---------- 每日小地圖（放在時程表下方） ----------
+function mapBlock(html, defs, day) {
+  const hasEst = defs.some(d => d.pins.some(p => p.est));
+  const cap = '🗺️ 當日位置示意圖：圖釘上的數字是行程順序；位置為示意，請以 Google Maps 為準；灰色小圖示是附近的顯眼地標' + (hasEst ? '；虛線框＝位置為估計' : '');
+  const block = defs.map((def, idx) => {
+    const style = def.maxWidth ? ` style="max-width:${def.maxWidth}px;margin-left:auto;margin-right:auto"` : '';
+    return `<div class="daymap"${style}>${idx === 0 ? `<div class="cap">${cap}</div>` : ''}` + renderMap(day, idx, def, MAP_DATA) + '</div>';
+  }).join('\n');
+  const marker = '</tbody></table></div>';
+  const i = html.indexOf(marker);
+  return i < 0 ? html + block : html.slice(0, i + marker.length) + '\n' + block + html.slice(i + marker.length);
+}
+
 // ---------- 組頁 ----------
-function page({ versions, heading, backHref }) {
+function page({ versions, heading, backHref, maps }) {
   const multi = versions.length > 1;
   const label = versions[0].label;
   const count = versions[0].days.length;
@@ -171,7 +192,7 @@ function page({ versions, heading, backHref }) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${titleText}</title>
-<style>${CSS}</style>
+<style>${CSS}${maps ? MAP_CSS : ''}</style>
 </head>
 <body>
 <header class="hero"><a class="back" href="${backHref}">← 回首頁</a><h1>${h1}</h1><p>${sub}</p></header>
@@ -179,7 +200,7 @@ ${multi ? `<div class="ver"><div class="wrap" id="vers">${versions.map((v, i) =>
 <main class="wrap">
 ${versions.map((v, i) => `<div class="vsec${i === 0 ? ' on' : ''}" id="v-${v.id}">${v.days.map(d => `<section class="day${d.n === 1 ? ' on' : ''}" data-d="d${d.n}">
 <h2>${esc(d.title)}</h2>
-${d.html}
+${maps && maps[d.n] ? mapBlock(d.html, maps[d.n], d.n) : d.html}
 </section>`).join('\n')}</div>`).join('\n')}
 </main>
 <footer>${FOOTER}</footer>
@@ -199,3 +220,4 @@ for (const v of VERSIONS) {
   write(`timetable-${v.id}.html`, page({ versions: [v], backHref: 'index.html' }));
 }
 write('timetable-5d.html', page({ versions: [V5], backHref: 'index.html' }));
+write('timetable-5d-alt.html', page({ versions: [V5ALT], backHref: 'index.html', maps: MAPS5ALT }));

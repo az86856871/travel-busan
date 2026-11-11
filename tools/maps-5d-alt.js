@@ -38,11 +38,14 @@ module.exports = {
     ...BASE,
     h: 760, detail: false,
     title: '🌈 Day 2 海雲台＆機張路線圖',
-    offmap: [{ ...HOME('出發・回程'), y: 0.55, note: '◀ 往西約 12 公里' }],
+    offmap: [
+      { ...HOME('出發・回程'), y: 0.55, note: '◀ 往西約 12 公里' },
+      { name: '機張市場', emoji: '🦀', type: 'f', num: 10, x: 0.6, y: 0.07, note: '▲ 往北約 5 公里' },
+    ],
     pins: [
-      { name: '尾浦站（天空膠囊）', emoji: '🚃', num: 1, type: 't', lat: 35.1581, lon: 129.1729, dir: 'l' },
+      { name: '尾浦站（天空膠囊）', emoji: '🚃', num: 1, type: 't', lat: 35.1581, lon: 129.1729, dir: 't' },
       {
-        dir: 'r', type: 's', items: [
+        dir: 'r', dx: 50, dy: -20, type: 's', items: [
           { name: '青沙浦平交道', emoji: '🚃', num: 2, type: 's', lat: 35.1609, lon: 129.1903, est: true },
           { name: 'Orb Coffee Salon', emoji: '☕', num: 3, type: 'f', lat: 35.1619, lon: 129.1928, est: true },
           { name: '青沙浦天空步道', emoji: '🌉', num: 4, type: 's', lat: 35.1642, lon: 129.1961 },
@@ -53,14 +56,13 @@ module.exports = {
       { name: '松亭站', emoji: '🚉', num: 7, type: 't', lat: 35.1877, lon: 129.2021, dir: 'l' },
       { name: '海東龍宮寺', emoji: '🛕', num: 8, type: 's', lat: 35.1884, lon: 129.2230, dir: 'r' },
       { name: 'Skyline Luge', emoji: '🛷', num: 9, type: 's', lat: 35.1941, lon: 129.2191, dir: 'l' },
-      { name: '機張市場', emoji: '🦀', num: 10, type: 'f', lat: 35.2435, lon: 129.2152, dir: 'l' },
     ],
     landmarks: [
       { name: '海雲台海水浴場', emoji: '🏖️', lat: 35.1578, lon: 129.1581 },
       { name: '青沙浦雙燈塔', emoji: '🗼', lat: 35.1596, lon: 129.1921, dx: -34, dy: 28 },
       { name: '松亭海水浴場', emoji: '🏖️', lat: 35.1805, lon: 129.2033, dx: 24 },
     ],
-    deco: [['☁️', 0.3, 0.1, 34], ['☁️', 0.7, 0.2, 30], ['✨', 0.12, 0.3, 22], ['🌳', 0.1, 0.2], ['⛵', 0.85, 0.75], ['🐟', 0.9, 0.55, 22], ['🌊', 0.75, 0.9, 24]],
+    deco: [['☁️', 0.3, 0.1, 34], ['✨', 0.12, 0.3, 22], ['🌳', 0.1, 0.2], ['⛵', 0.93, 0.78], ['🐟', 0.9, 0.55, 22], ['🌊', 0.75, 0.9, 24]],
   }],
 
   3: [{

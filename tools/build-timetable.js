@@ -17,8 +17,8 @@ const VERSIONS = [
   { id: 'hua', name: '中華航空版', count: 4, label: '釜山 4天3夜' },
 ];
 const V5 = { id: '5d', name: '易斯達版', count: 5, label: '釜山 5天4夜' };
-// 備案：Day 2、Day 3 改讀 day2-1-5d.md、day3-1-5d.md，其餘天數沿用原本的檔案
-const V5ALT = { id: '5d', name: '易斯達版・備案', count: 5, label: '釜山 5天4夜', alt: { 2: 'day2-1-5d.md', 3: 'day3-1-5d.md', 4: 'day4-1-5d.md' } };
+// 備案：Day 1~4 改讀 day1-1-5d.md ~ day4-1-5d.md，Day 5 沿用原本的檔案
+const V5ALT = { id: '5d', name: '易斯達版・備案', count: 5, label: '釜山 5天4夜', alt: { 1: 'day1-1-5d.md', 2: 'day2-1-5d.md', 3: 'day3-1-5d.md', 4: 'day4-1-5d.md' } };
 
 // ---------- md -> html ----------
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

@@ -20,8 +20,8 @@
 | `timetable-lcc.html` | 每日時間表：廉價航空版 |
 | `itinerary-5d.html` | 行程：5 天 4 夜（易斯達版） |
 | `itinerary-5d-storybook.html` | 行程：5 天 4 夜（易斯達版）繪本風，含出發倒數、時間軸、待辦清單（勾選只存在各自瀏覽器）與住宿資訊 |
-| `itinerary-5d-alt.html` | 行程：5 天 4 夜（易斯達版）備案，Day 2 海岸列車到松亭＋機張，Day 3 海理團路＋汗蒸幕＋遊艇＋Bay 101 夜景與晚餐，Day 4 松島纜車＋龍宮雲橋＋烤貝＋ARTE MUSEUM＋白淺灘下午茶＋烤肉晚餐五選一（優先 83 獬豸）（Pass 從 Day 2 Luge 起算） |
-| `timetable-5d-alt.html` | 每日時間表：5 天 4 夜（易斯達版）備案，由 `day2-1-5d.md`、`day3-1-5d.md`、`day4-1-5d.md` 轉出；時間表下方有每日位置示意圖（靜態 SVG，直接嵌在頁面裡，不需要網路） |
+| `itinerary-5d-alt.html` | 行程：5 天 4 夜（易斯達版）備案，Day 1 甘川文化村＋南浦洞（晚餐以 Handasot 韓多鍋為主），Day 2 海岸列車到松亭＋機張，Day 3 海理團路＋汗蒸幕＋遊艇＋Bay 101 夜景與晚餐，Day 4 松島龍宮雲橋＋纜車＋天空步道＋松島午餐三選一＋ARTE MUSEUM＋白淺灘下午茶＋烤肉晚餐五選一（優先 83 獬豸），Day 5 田浦咖啡街＋西面採買（Pass 從 Day 2 Luge 起算） |
+| `timetable-5d-alt.html` | 每日時間表：5 天 4 夜（易斯達版）備案，原始內容是 `day1-1-5d.md` 到 `day5-1-5d.md`，**但這個頁面以 HTML 為主、直接改 HTML**（見下方「更新時間表」的警告）；時間表下方有每日位置示意圖（靜態 SVG，直接嵌在頁面裡，不需要網路） |
 | `tools/maps-5d-alt.js` | 備案每日小地圖的景點座標、名稱標籤位置與小圖示；改了景點後先執行 `node tools/fetch-map-data.js --force` 重抓底圖資料（需要網路），再執行 `node tools/build-timetable.js` |
 | `tools/map-data/` | 每日小地圖的海岸線與道路資料（來自 OpenStreetMap，已抓好存檔，平常 build 不需要網路） |
 | `timetable-5d.html` | 每日時間表：5 天 4 夜（易斯達版） |
@@ -29,6 +29,8 @@
 | `md/VISIT_BUSAN_PASS_景點區域與價格.md` | PASS 景點（A、B 組）的區域與官網價格 |
 | `timetable/day1-hua.md` … `day4-lcc.md` | 4 天 3 夜時間表的原始內容（Markdown） |
 | `timetable/day1-5d.md` … `day5-5d.md` | 5 天 4 夜時間表的原始內容（Markdown） |
+| `timetable/day1-1-5d.md` … `day5-1-5d.md` | 5 天 4 夜備案時間表的內容記錄（Markdown），內容與 `timetable-5d-alt.html` 同步，但沒有連結與顏色 |
+| `image/` | 參考圖片：景點圖、Pass 景點、地鐵圖、Egg Drop 菜單等（航班截圖在 `fligth/`） |
 | `tools/build-timetable.js` | 把 md 轉成時間表網頁的腳本 |
 
 ## 更新時間表
@@ -40,6 +42,16 @@
 ```
 node tools/build-timetable.js
 ```
+
+### ⚠️ 備案時間表（`timetable-5d-alt.html`）不要重新產生
+
+`node tools/build-timetable.js` 會把整份 `timetable-5d-alt.html` 從 md 重新寫過，**會蓋掉只存在 HTML 的內容**：
+
+- 頁面最上方的韓文點餐卡、住宿參考、Strut Coffee。
+- 店名上的 Google Maps 超連結（md 只能寫成純網址）。
+- 粉紅色警示字（md 不支援顏色）。
+
+備案時間表請直接改 HTML，並同步更新 `day*-1-5d.md` 當作記錄；每日地圖則改 `tools/maps-5d-alt.js` 後另外處理。其他版本的時間表仍可用上面的指令重新產生。
 
 ## 備註
 

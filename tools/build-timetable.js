@@ -18,7 +18,7 @@ const VERSIONS = [
 ];
 const V5 = { id: '5d', name: '易斯達版', count: 5, label: '釜山 5天4夜' };
 // 備案：Day 1~4 改讀 day1-1-5d.md ~ day4-1-5d.md，Day 5 沿用原本的檔案
-const V5ALT = { id: '5d', name: '易斯達版・備案', count: 5, label: '釜山 5天4夜', alt: { 1: 'day1-1-5d.md', 2: 'day2-1-5d.md', 3: 'day3-1-5d.md', 4: 'day4-1-5d.md' } };
+const V5ALT = { id: '5d', name: '易斯達版・備案', count: 5, label: '釜山 5天4夜', alt: { 1: 'day1-1-5d.md', 2: 'day2-1-5d.md', 3: 'day3-1-5d.md', 4: 'day4-1-5d.md', 5: 'day5-1-5d.md' } };
 
 // ---------- md -> html ----------
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

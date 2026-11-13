@@ -1,10 +1,10 @@
 // 每日小地圖的畫面範圍與投影（fetch-map-data.js 與 render-map.js 共用）。
 // 依景點座標算出比例，讓所有景點剛好落在 800×520 的畫面內，並回傳要向 OpenStreetMap 要資料的經緯度範圍。
-const DEFAULTS = { w: 800, h: 520, padX: 120, padTop: 100, padBottom: 90, minX: 900, minY: 600 };
+const DEFAULTS = { w: 800, h: 520, padX: 120, padTop: 100, padBottom: 90, minX: 900, minY: 600, shiftX: 0 };
 const M_LAT = 110574, M_LON = 111320;
 
 function viewport(pins, opts = {}) {
-  const { w: W, h: H, padX: PAD_X, padTop: PAD_TOP, padBottom: PAD_BOTTOM, minX: MIN_X, minY: MIN_Y } = { ...DEFAULTS, ...opts };
+  const { w: W, h: H, padX: PAD_X, padTop: PAD_TOP, padBottom: PAD_BOTTOM, minX: MIN_X, minY: MIN_Y, shiftX: SHIFT_X } = { ...DEFAULTS, ...opts };
   const lats = pins.map(p => p.lat), lons = pins.map(p => p.lon);
   const lat0 = (Math.min(...lats) + Math.max(...lats)) / 2;
   const lon0 = (Math.min(...lons) + Math.max(...lons)) / 2;
@@ -17,8 +17,8 @@ function viewport(pins, opts = {}) {
   const s = Math.min((W - 2 * PAD_X) / spanX, (H - PAD_TOP - PAD_BOTTOM) / spanY); // 每公尺幾個畫素
   const cx = (Math.max(...xs) + Math.min(...xs)) / 2, cy = (Math.max(...ys) + Math.min(...ys)) / 2;
   const yc = (PAD_TOP + H - PAD_BOTTOM) / 2;
-  const project = (lat, lon) => [W / 2 + (mx(lon) - cx) * s, yc - (my(lat) - cy) * s];
-  const invLon = x => lon0 + ((x - W / 2) / s + cx) / kx;
+  const project = (lat, lon) => [W / 2 + SHIFT_X + (mx(lon) - cx) * s, yc - (my(lat) - cy) * s];
+  const invLon = x => lon0 + ((x - W / 2 - SHIFT_X) / s + cx) / kx;
   const invLat = y => lat0 + ((yc - y) / s + cy) / M_LAT;
   const margin = 0.08;
   const bbox = {

@@ -25,6 +25,7 @@
 | `tools/maps-5d-alt.js` | 備案每日小地圖的景點座標、名稱標籤位置與小圖示；改了景點後先執行 `node tools/fetch-map-data.js --force` 重抓底圖資料（需要網路），再執行 `node tools/build-timetable.js` |
 | `tools/map-data/` | 每日小地圖的海岸線與道路資料（來自 OpenStreetMap，已抓好存檔，平常 build 不需要網路） |
 | `timetable-5d.html` | 每日時間表：5 天 4 夜（易斯達版） |
+| `korean-cards.html` | 韓國實用小字卡（收合式，可給店員看並播放韓文發音），首頁有入口；目前有「不吃牛」 |
 | `pass-calculator.html` | 釜山 PASS 省錢計算（單人成人價，比較 24H／48H／BIG3／BIG5 與單買） |
 | `md/VISIT_BUSAN_PASS_景點區域與價格.md` | PASS 景點（A、B 組）的區域與官網價格 |
 | `timetable/day1-hua.md` … `day4-lcc.md` | 4 天 3 夜時間表的原始內容（Markdown） |
@@ -47,7 +48,7 @@ node tools/build-timetable.js
 
 `node tools/build-timetable.js` 會把整份 `timetable-5d-alt.html` 從 md 重新寫過，**會蓋掉只存在 HTML 的內容**：
 
-- 頁面最上方的韓文點餐卡、住宿參考、Strut Coffee。
+- 頁面最上方的住宿參考、Strut Coffee。
 - 店名上的 Google Maps 超連結（md 只能寫成純網址）。
 - 粉紅色警示字（md 不支援顏色）。
 

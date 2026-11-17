@@ -34,6 +34,12 @@ body{margin:0;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans
 .flight .dt{display:inline-block;background:var(--accent);color:#fff;font-weight:700;border-radius:6px;padding:1px 10px;margin-right:8px}
 .flight .tm{font-size:1.1rem;font-weight:700;color:var(--primary-d)}
 .flight small{display:block;margin-top:2px}
+.flight h4{margin:14px 0 4px;color:var(--ink);font-size:.95rem}
+.flight .fl{border:1px solid;border-radius:10px;padding:8px 12px;margin:6px 0}
+.flight .fl .ab{display:inline-block;color:#fff;font-weight:700;border-radius:6px;padding:0 8px;margin-right:6px}
+.flight .fl{background:#fff6f1;border-color:#ffdccf}.flight .fl .tm{color:#d05a3a}.flight .fl .ab{background:#ff8f6e}
+.flight .al{color:var(--ink);font-size:1.1rem}
+.flight sup.nd{font-size:.65rem;font-weight:700;margin-left:2px;vertical-align:super}
 .flight .air{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .flight .air button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:4px 14px}
 .flight .air button.on{background:var(--primary);border-color:var(--primary);color:#fff}
@@ -83,22 +89,20 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
 
 <div class="wrap">
   <section class="facts">
-    <div class="fact"><b>🏨 一間飯店住到底</b><span>全程入住西面，地鐵 1、2 號線直達東西兩側，不換飯店、省時省力。<br>住宿參考：<a href="https://www.booking.com/hotel/kr/207stay-korea.zh-tw.html" target="_blank" rel="noopener">207stay korea</a>（田浦站附近，公寓式住宿）</span></div>
+    <div class="fact"><b>🏨 一間飯店住到底</b><span>全程入住西面，地鐵 1、2 號線直達東西兩側，不換飯店、省時省力。<br>住宿參考：<details style="margin:4px 0"><summary style="cursor:pointer;font-weight:700">飯店（1 間）</summary><a href="https://reurl.cc/6XrVqk" target="_blank" rel="noopener">西面登巴斯塔中央飯店</a>（4 床）約 NT$32,000</details><details style="margin:4px 0"><summary style="cursor:pointer;font-weight:700">公寓（3 間）</summary><a href="https://reurl.cc/EYE861" target="_blank" rel="noopener">207stay korea</a>（4 床・田浦站附近）約 NT$38,500<br><a href="https://reurl.cc/k9DNOb" target="_blank" rel="noopener">201 JH Blossom Stay Jeonpo</a>（3 床）約 NT$37,000<br><a href="https://reurl.cc/k9DNyG" target="_blank" rel="noopener">Soul Stay 2</a>（3 床）約 NT$31,000</details></span></div>
     <div class="fact"><b>🎫 48 小時 Busan Pass</b><span>Day 2 下午 Skyline Luge 才啟用，一路用到 Day 4 下午約 16:00（13:30 的 ARTE MUSEUM 還來得及），景點玩得划算。</span></div>
-    <div class="fact"><b>🍲 吃得暖、吃得安心</b><span>海鮮、烤貝、雪蟹到熱呼呼的豬肉料理，以熟食與連鎖餐廳為主，餐餐熱騰騰、吃得安心。</span></div>
+    <div class="fact"><b>🍲 吃得暖、吃得安心</b><span>港邊海鮮市場、青沙浦烤貝、機張雪蟹，豬肉湯飯、釜飯與韓式烤肉，再配夜市小吃、吐司麵包與咖啡，每天都吃得不一樣。</span></div>
   </section>
   <section class="flight">
-    <b>✈️ 暫定航班（直達・易斯達航空）</b>
-    <div class="opts">
-      <div class="show"><em>方案 1｜易斯達航空<span class="price">NT$11,916</span></em>
-        <p><span class="dt">去程 4/21（三）</span><span class="tm">02:35 ➔ 06:05</span><small>TPE ➔ PUS・2 小時 30 分・易斯達航空</small></p>
-        <p><span class="dt">回程 4/25（日）</span><span class="tm">22:10 ➔ 00:15（+1）</span><small>PUS ➔ TPE・3 小時 5 分・易斯達航空</small></p>
-</div>
-      <div class="show"><em>方案 2｜易斯達航空<span class="price">NT$12,425</span></em>
-        <p><span class="dt">去程 4/21（三）</span><span class="tm">02:40 ➔ 06:10</span><small>TPE ➔ PUS・2 小時 30 分・易斯達航空</small></p>
-        <p><span class="dt">回程 4/25（日）</span><span class="tm">22:00 ➔ 00:20（+1）</span><small>PUS ➔ TPE・3 小時 20 分・易斯達航空</small></p></div>
-    </div>
-    <p><small>※ 回程班次與日期暫時沿用 4/24 的班次時間，待訂票確認。</small></p>
+    <b>✈️ 暫定航班（直達）</b>
+    <h4>去程｜5/19（三）</h4>
+    <div class="fl out"><span class="ab">去</span><span class="tm">02:35 ➔ 06:05</span>　<b class="al">易斯達航空</b>（台北 ➔ 釜山，約 2 小時 30 分）<small>行李 15kg・NT$5,850</small></div>
+    <h4>回程｜5/23（日）・A、B 擇一</h4>
+    <div class="fl ra"><span class="ab">A</span><span class="tm">20:45 ➔ 22:10</span>　<b class="al">台灣虎航</b>（釜山 ➔ 台北，約 2 小時 25 分）<small>行李 25kg・NT$5,550</small></div>
+    <div class="fl rb"><span class="ab">B</span><span class="tm">22:10 ➔ 00:15<sup class="nd">+1</sup></span>　<b class="al">易斯達航空</b>（釜山 ➔ 台北，約 3 小時 5 分）<small>行李 15kg・NT$5,470</small></div>
+    <h4>來回總價</h4>
+    <p>去程＋回程 A：<b>NT$11,400</b>　｜　去程＋回程 B：<b>NT$11,320</b></p>
+    <p><small>※ 時間皆為當地時間。B 比 A 多約 1 小時 25 分可玩。實際班次與價格以訂票結果為準。</small></p>
   </section>
 </div>
 
@@ -117,7 +121,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
 
   <div class="period">🌅 清晨</div>
   <div class="card"><h3>抵達釜山・處理事務與寄放行李</h3><p>06:05 抵達，入境、領 Pass 券後，搭計程車到西面寄放行李。<br><small>※ <b style="color:#d6336c">最晚 08:00 要從西面出發</b>。</small></p></div>
-  <div class="card eat"><h3>早餐選擇（札嘎其站附近）</h3><p><b>首選：<a href="https://maps.app.goo.gl/5UprEAe8Ki4N3hEE9" target="_blank" rel="noopener">EGG DROP</a></b>：08:00 營業，可外帶到天空展望台吃（外帶 ₩100）；<a href="https://sites.google.com/view/eggdrop-haeundae/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">中文菜單</a>；<a href="image/EGG_DROP%E5%90%90%E5%8F%B8%E5%9C%96.jpg" download="EGG_DROP吐司圖.jpg">吐司內容物參考</a>。<br><b>備選</b>：新昌吐司（<b style="color:#d6336c">週三沒營業</b>）、釜山正宗飯捲。<br><small>※ 西面搭 1 號線到札嘎其站（7 號出口），步行約 6 分鐘。</small></p></div>
+  <div class="card eat"><h3>早餐選擇（札嘎其站附近）</h3><p><b>首選：<a href="https://maps.app.goo.gl/5UprEAe8Ki4N3hEE9" target="_blank" rel="noopener">EGG DROP</a></b>：08:00 營業，可外帶到天空展望台吃（外帶 ₩100）；<a href="https://sites.google.com/view/eggdrop-haeundae/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">中文菜單</a>；<a href="image/EGG_DROP%E5%90%90%E5%8F%B8%E5%9C%96.jpg" download="EGG_DROP吐司圖.jpg">吐司內容物參考</a>。<br><b>備選</b>：<a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E6%98%8C%E5%90%90%E5%8F%B8%20%E6%9C%AD%E5%98%8E%E5%85%B6%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">新昌吐司</a>（<b style="color:#d6336c">週三沒營業</b>）、釜山正宗飯捲。<br><small>※ 西面搭 1 號線到札嘎其站（7 號出口），步行約 6 分鐘。</small></p></div>
 
   <div class="period">🌈 甘川文化村</div>
   <div class="card"><h3>甘川文化村 <span class="tag ride">🚕 買完早餐搭計程車上山，約 20 分鐘</span></h3><p>計程車直達<b>最高點入口</b>，先在天空展望台吃早餐，再「一路往下走」逛彩色小屋，別忘了拍<b>小王子</b>。<br><small>※ 約 9:10 抵達，可能要排隊。</small></p></div>
@@ -138,8 +142,8 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
   <div class="card"><h3>樂天百貨超市 <span class="tag opt">同一棟 B1</span></h3><p>零食與伴手禮一次買齊；冷藏或易融化的留到最後再買。</p></div>
 
   <div class="period">🍜 晚餐（三選一）</div>
-  <div class="card eat"><h3>A. 富平罐頭市場・夜市 <span class="tag opt">19:30 出發逛</span></h3><p>越夜越熱鬧，推薦<b>釜山魚板與豆皮包</b>、<b>李家辣炒年糕</b>、<b>辣炒盲鰻</b>、<b>糖餅</b>、<b>黃豆粉奶油艾草麵包</b>。<br><small>※ 夜市約 19:30–23:00，建議停留約 2 小時。</small></p></div>
-  <div class="card eat"><h3>B. 南浦洞商圈・坐著吃熱門正餐</h3><p>想坐著吃：<b>味贊王鹽烤肉 南浦店</b>、<b>南浦參雞湯</b>、<b>金剛部隊鍋</b>、<b>李才模披薩 本店</b>。<br><small>※ 熱門店可能要排隊，營業時間請先看地圖。</small></p></div>
+  <div class="card eat"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%AF%8C%E5%B9%B3%E7%BD%90%E9%A0%AD%E5%B8%82%E5%A0%B4%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">A. 富平罐頭市場・夜市</a> <span class="tag opt">19:30 出發逛</span></h3><p>越夜越熱鬧，推薦<b>釜山魚板與豆皮包</b>、<b>李家辣炒年糕</b>、<b>辣炒盲鰻</b>、<b>糖餅</b>、<b>黃豆粉奶油艾草麵包</b>。<br><small>※ 夜市約 19:30–23:00，建議停留約 2 小時。</small></p></div>
+  <div class="card eat"><h3>B. 南浦洞商圈・坐著吃熱門正餐</h3><p>想坐著吃：<b><a href="https://maps.app.goo.gl/pkTuyPyWiUsajvN89" target="_blank" rel="noopener">味贊王鹽烤肉 富平店</a></b>、<b><a href="https://maps.app.goo.gl/LQv3XyuuNU2dAEsj9" target="_blank" rel="noopener">南浦參雞湯</a></b>、<b><a href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E5%89%9B%E9%83%A8%E9%9A%8A%E9%8D%8B%20%E5%8D%97%E6%B5%A6%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">金剛部隊鍋</a></b>、<b><a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%8E%E6%89%8D%E6%A8%A1%E6%8A%AB%E8%96%A9%20%E6%9C%AC%E5%BA%97%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">李才模披薩 本店</a></b>。<br><small>※ 熱門店可能要排隊，營業時間請先看地圖。</small></p></div>
   <div class="card eat"><h3>C. <a href="https://maps.app.goo.gl/w4w7swTQ5CqWsbSu7" target="_blank" rel="noopener">Handasot 韓多鍋 南浦店</a> <span class="tag pass">優先</span><span class="tag opt">Creatrip 預訂</span></h3><p>必點招牌釜飯，點餐後現煮。</p></div>
 
 
@@ -154,14 +158,14 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
   <div class="route">西面出發 ➔ <a href="https://www.google.com/maps/search/?api=1&query=海雲台天空膠囊列車%20尾浦站%20釜山" target="_blank" rel="noopener">天空膠囊列車</a> ➔ 青沙浦（<a href="https://maps.app.goo.gl/Y7zmPEuVrv3YKuZE6" target="_blank" rel="noopener">平交道</a>、<a href="https://maps.app.goo.gl/tDukQ4CWWFRNX9Va7" target="_blank" rel="noopener">天空步道</a>、<a href="https://maps.app.goo.gl/aNBXgw6peF4s4ZHE6" target="_blank" rel="noopener">Orb Coffee Salon</a>、午餐）➔ 松亭（<a href="https://maps.app.goo.gl/Jy55n6xGthVgoG6k7" target="_blank" rel="noopener">海岸列車</a>）➔ <a href="https://www.google.com/maps/search/?api=1&query=海東龍宮寺%20釜山" target="_blank" rel="noopener">海東龍宮寺</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=Skyline%20Luge%20Busan" target="_blank" rel="noopener">Skyline Luge 斜坡滑車</a>➔ <a href="https://www.google.com/maps/search/?api=1&query=機張市場%20釜山" target="_blank" rel="noopener">機張市場</a>（晚餐）➔ 返回西面<br><small>🔥 Pass 啟用日｜東半部與機張｜海岸列車自費，Pass 從 Skyline Luge 才啟用</small></div>
 
   <div class="period">🌅 清晨・出發</div>
-  <div class="card eat"><h3>早餐選擇（尾浦站附近）</h3><p><b>兔子咖啡</b>：08:00 營業，貝果、招牌海鹽拿鐵。<br><b>極東豬肉湯飯</b>：08:00 營業，豬肉湯飯或綜合湯飯。<br><b>自然島鹽麵包</b>：9:00 營業，外帶上車吃；不單賣，一袋 4 入（₩12,000）。</p></div>
+  <div class="card eat"><h3>早餐選擇（尾浦站附近）</h3><p><b><a href="https://www.google.com/maps/search/?api=1&query=%E5%85%94%E5%AD%90%E5%92%96%E5%95%A1%20%E5%B0%BE%E6%B5%A6%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">兔子咖啡</a></b>：08:00 營業，貝果、招牌海鹽拿鐵。<br><b><a href="https://www.google.com/maps/search/?api=1&query=%E6%A5%B5%E6%9D%B1%E8%B1%AC%E8%82%89%E6%B9%AF%E9%A3%AF%20%E5%B0%BE%E6%B5%A6%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">極東豬肉湯飯</a></b>：08:00 營業，豬肉湯飯或綜合湯飯。<br><b><a href="https://maps.app.goo.gl/ieg5qLnduy1hKhQ4A" target="_blank" rel="noopener">自然島鹽麵包</a></b>：9:00 營業，外帶上車吃；不單賣，一袋 4 入（₩12,000）。</p></div>
 
   <div class="period">☀️ 上午・青沙浦</div>
   <div class="card"><h3>天空膠囊列車 Sky Capsule <span class="tag paid">自費票</span><span class="tag paid">需預約</span><span class="tag ride">🚃 尾浦站 ➔ 青沙浦站 約 30 分鐘</span></h3><p>坐進行駛在高空舊鐵道上、色彩繽紛的小車廂，窗外就是蔚藍海景。<br><small>※ 08:00 從西面出發，搭地鐵 2 號線到中洞站（7 號出口）步行約 18 分鐘，或到海雲台站再叫計程車約 7 分鐘（多人分攤划算）；9:00 前到尾浦站，9:30 發車。</small><br><small>※ <b style="color:#d6336c">沒訂到的話，改搭海岸列車</b>（一日自由券 ₩16,000）。</small></p></div>
   <div class="card"><h3>青沙浦平交道・Orb Coffee Salon・天空步道</h3><p>先到「灌籃高手平交道」拍照，再到 Orb Coffee Salon 看海喝咖啡（約 45 分鐘），最後走天空步道，看紅白雙燈塔。<br><small>※ 天空步道免費，天候不佳可能關閉。</small></p></div>
 
   <div class="period">🍜 午餐</div>
-  <div class="card eat"><h3>青沙浦午餐選擇</h3><p><b>青沙浦冬柏家</b>：11:30 營業，純海鮮烤貝店，點綜合烤貝拼盤與海鮮拉麵。<br><b>Jogae View</b>：11:30 營業，海鮮、起司與義大利麵，點起司龍蝦與綜合貝類拼盤、紅扇貝套餐，無牛。<br><b>玉伊大麥飯</b>：11:00 營業，韓式傳統野菜大麥飯，有季節野菜、大醬湯與海鮮韭菜煎餅。<br><b>all barut kitchen</b>：11:00 營業，招牌泥蚶拌飯。<br><small>※ 建議用餐約 2 小時（約 11:45–13:45）。</small></p></div>
+  <div class="card eat"><h3>青沙浦午餐選擇</h3><p><b><a href="https://maps.app.goo.gl/2dYQehtigzmptZFc6" target="_blank" rel="noopener">青沙浦冬柏家</a></b>：11:30 營業，純海鮮烤貝店，點綜合烤貝拼盤與海鮮拉麵。<br><b><a href="https://maps.app.goo.gl/PVN5Y9gsPqZvwC376" target="_blank" rel="noopener">Jogae View</a></b>：11:30 營業，海鮮、起司與義大利麵，點起司龍蝦與綜合貝類拼盤、紅扇貝套餐，無牛。<br><b><a href="https://maps.app.goo.gl/FmFHkwwrfzZGVDrPA" target="_blank" rel="noopener">玉伊大麥飯</a></b>：11:00 營業，韓式傳統野菜大麥飯，有季節野菜、大醬湯與海鮮韭菜煎餅。<br><b><a href="https://maps.app.goo.gl/FqBZpjRANTy5BfH3A" target="_blank" rel="noopener">all barut kitchen</a></b>：11:00 營業，招牌泥蚶拌飯。<br><small>※ 建議用餐約 2 小時（約 11:45–13:45）。</small></p></div>
 
   <div class="period">🌊 下午・松亭與機張</div>
   <div class="card"><h3>海雲台海岸列車 <span class="tag paid">自費票 ₩8,000</span><span class="tag ride">🚃 青沙浦站 ➔ 松亭站 約 30 分鐘</span></h3><p>沿著海岸線行駛的觀光列車，座位全面向海。約 14:00 搭乘。<br><small>※ 早上已買一日自由券的話，這段不用另買。</small></p></div>
@@ -252,11 +256,11 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
   <div class="card eat"><h3><a href="https://maps.app.goo.gl/mkaGLdB2H6eVKb2h6" target="_blank" rel="noopener">松亭三代豬肉湯飯</a> <span class="tag metro">西面</span></h3><p>約 13:30–15:00，最後一頓正餐來碗熱騰騰的豬肉湯飯，暖胃又滿足。</p></div>
 
   <div class="period">🛍️ 下午・西面</div>
-  <div class="card"><h3>西面逛街採買</h3><p>約 15:00–17:30，輕鬆逛逛 <b>Butter shop</b>、<b>大創</b>、<b>OLIVE YOUNG</b> 藥妝、<b>ADER ERROR</b>、<b>Musinsa Standard</b> 服飾，也可以散步逛逛<b>西面地下街</b>。<br><small>※ 伴手禮可趁早買，機場前不要買太多易融化的東西。</small></p></div>
+  <div class="card"><h3>西面逛街採買</h3><p>約 15:00–16:30（搭方案 B 可逛到約 17:30），輕鬆逛逛 <b>Butter shop</b>、<b>大創</b>、<b>OLIVE YOUNG</b> 藥妝、<b>ADER ERROR</b>、<b>Musinsa Standard</b> 服飾，也可以散步逛逛<b>西面地下街</b>。<br><small>※ 伴手禮可趁早買，機場前不要買太多易融化的東西。</small></p></div>
 
   <div class="period">✈️ 傍晚・返程</div>
-  <div class="card eat"><h3>買小吃帶去機場</h3><p>約 17:30–18:30，買魚板、辣炒年糕或炸雞，帶去機場吃。</p></div>
-  <div class="card"><h3>快樂返程</h3><p>約 18:30 回飯店拿行李，出發去機場，約 19:15 到。期待下次再見，釜山！<br><small>※ 航班約 22:00–22:10；託運行李與免稅額度請依訂票時的規定確認。</small></p></div>
+  <div class="card eat"><h3>買小吃帶去機場</h3><p>約 16:30–17:15（方案 B 為約 17:30–18:30），買魚板、辣炒年糕或炸雞，帶去機場吃。</p></div>
+  <div class="card"><h3>快樂返程</h3><p>方案 A（虎航 20:45）：約 17:15 回飯店拿行李，出發去機場，約 18:00 到。<br>方案 B（易斯達 22:10）：約 18:30 回飯店拿行李，出發去機場，約 19:15 到。<br>期待下次再見，釜山！<br><small>※ 託運行李與免稅額度請依訂票時的規定確認。</small></p></div>
 </section>
 
 </main>

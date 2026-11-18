@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>釜山 5天4夜繪本行程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFCF6;--ink:#3E3A39;--coral:#F2A497;--yellow:#F6D27A;--sky:#A8D3E6;--green:#B9DAA5;--muted:#7a736f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Huninn","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;line-height:1.7;font-size:16px}
+a{color:var(--ink);text-decoration-thickness:2px;text-decoration-color:var(--coral);text-underline-offset:3px}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+/* 頂端固定選單 */
+.top{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:3px solid var(--ink)}
+.top .wrap{display:flex;align-items:center;gap:6px;padding:8px 16px;overflow-x:auto}
+.top a.home{flex:none;text-decoration:none;font-weight:700;margin-right:4px}
+.top a.m{flex:none;text-decoration:none;border:3px solid var(--ink);border-radius:999px;padding:2px 12px;font-size:.92rem;background:#fff}
+.top a.m:nth-of-type(1){background:var(--sky)}.top a.m:nth-of-type(2){background:var(--yellow)}
+.top a.m:nth-of-type(3){background:var(--green)}.top a.m:nth-of-type(4){background:var(--coral)}
+/* 首頁 */
+.hero{text-align:center;padding:18px 0 8px}
+.hero h1{margin:6px 0 2px;font-size:2rem;letter-spacing:.06em}
+.hero p{margin:0;color:var(--muted)}
+.art{display:block;width:100%;max-width:300px;margin:0 auto;border:3px solid var(--ink);border-radius:22px;background:var(--sky)}
+.count{display:flex;justify-content:center;gap:8px;margin:14px 0 4px;flex-wrap:wrap}
+.count div{min-width:66px;border:3px solid var(--ink);border-radius:18px;background:var(--yellow);padding:4px 8px;text-align:center}
+.count b{display:block;font-size:1.5rem;line-height:1.2}
+.count small{font-size:.78rem}
+.count-note{text-align:center;color:var(--muted);font-size:.85rem;margin:0 0 8px}
+/* 區塊 */
+section.blk{margin:26px 0}
+section.blk>h2{display:inline-block;margin:0 0 12px;font-size:1.25rem;border:3px solid var(--ink);border-radius:999px;padding:2px 16px;background:var(--coral)}
+.box{border:3px solid var(--ink);border-radius:22px;background:#fff;padding:12px 16px;margin-bottom:12px}
+.box.sky{background:#eaf5fa}.box.grn{background:#f1f8ec}.box.yel{background:#fff7de}
+.box h3{margin:0 0 4px;font-size:1.05rem}
+.box small{color:var(--muted)}
+/* 航班 */
+.fl{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;border:3px solid var(--ink);border-radius:18px;padding:8px 12px;margin:8px 0;background:#fff}
+.fl .ab{flex:none;width:30px;height:30px;border:3px solid var(--ink);border-radius:50%;background:var(--coral);text-align:center;line-height:24px;font-weight:700}
+.fl .al{font-size:1.1rem}
+.fl .tm{font-weight:700}
+.fl sup{font-size:.65rem;margin-left:2px}
+.fl small{flex-basis:100%;padding-left:40px}
+.fl.out .ab{background:var(--sky)}.fl.ra .ab{background:var(--yellow)}.fl.rb .ab{background:var(--green)}
+section.blk>details.fold>summary{display:inline-block;margin:0 0 12px;font-size:1.25rem;border:3px solid var(--ink);border-radius:999px;padding:2px 16px;background:var(--coral);list-style:none}
+section.blk>details.fold>summary::-webkit-details-marker{display:none}
+section.blk>details.fold>summary:after{content:" ▾"}
+section.blk>details.fold[open]>summary:after{content:" ▴"}
+details>summary{cursor:pointer;font-weight:700}
+details.box>summary{font-size:1.05rem}
+.lodge a{font-weight:700}
+.lodge p{margin:4px 0}
+/* 日期切換 */
+.days{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px}
+.days button{flex:none;font:inherit;cursor:pointer;border:3px solid var(--ink);border-radius:18px;background:#fff;padding:4px 12px;text-align:center;line-height:1.35;color:var(--ink)}
+.days button small{display:block;font-size:.75rem;color:var(--muted)}
+.days button.on{background:var(--coral)}
+.days button.on small{color:var(--ink)}
+.days button.pop{animation:pop .45s cubic-bezier(.3,1.6,.5,1)}
+.dayhead{border:3px solid var(--ink);border-radius:22px;background:var(--yellow);padding:10px 16px;margin:4px 0 16px}
+.dayhead h3{margin:0;font-size:1.1rem;line-height:1.5}
+.dayhead p{margin:4px 0 0;font-size:.9rem}
+.day.pop{animation:pop .5s cubic-bezier(.3,1.6,.5,1)}
+/* 時間軸 */
+.tl{position:relative;margin:0;padding:0 0 0 30px;list-style:none}
+.tl:before{content:"";position:absolute;left:10px;top:6px;bottom:6px;border-left:3px dashed var(--ink)}
+.tl li{position:relative;margin:0 0 14px}
+.tl li:before{content:"";position:absolute;left:-28px;top:12px;width:16px;height:16px;border:3px solid var(--ink);border-radius:50%;background:var(--bg)}
+.tl li.must:before{background:var(--coral)}
+.tl li.eat:before{background:var(--green)}
+.card{border:3px solid var(--ink);border-radius:20px;background:#fff;padding:8px 14px 10px;box-shadow:3px 3px 0 var(--ink)}
+.card.eat{background:#f1f8ec}
+.card.must{background:#fff3f0}
+.card .tm{display:inline-block;border:3px solid var(--ink);border-radius:999px;background:var(--sky);padding:0 10px;font-size:.85rem;font-weight:700;margin-right:6px}
+.card h4{margin:2px 0;font-size:1.05rem;display:inline}
+.card p{margin:4px 0 0;font-size:.93rem}
+.card ul{margin:4px 0 0;padding-left:18px;font-size:.93rem}
+.card li{margin:2px 0}
+.must-tag{display:inline-block;margin-left:6px;border:3px solid var(--ink);border-radius:999px;background:var(--coral);padding:0 10px;font-size:.78rem;font-weight:700;transform:rotate(-4deg);vertical-align:middle}
+.tags{margin:4px 0 0}
+.tag{display:inline-block;border:2px solid var(--ink);border-radius:999px;padding:0 9px;font-size:.78rem;margin:2px 4px 2px 0}
+.tag.metro{background:var(--sky)}.tag.ride{background:var(--yellow)}.tag.pass{background:var(--green)}.tag.book{background:var(--coral)}.tag.opt{background:#fff}
+.note{border:3px dashed var(--ink);border-radius:18px;padding:6px 14px;margin:6px 0 14px;background:#fff7de;font-size:.92rem}
+/* 待辦 */
+.todo{list-style:none;margin:0;padding:0}
+.todo li{margin:6px 0}
+.todo label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;border:3px solid var(--ink);border-radius:16px;background:#fff;padding:6px 12px}
+.todo input{appearance:none;flex:none;width:24px;height:24px;margin:2px 0 0;border:3px solid var(--ink);border-radius:8px;background:#fff;cursor:pointer;position:relative}
+.todo input:checked{background:var(--green)}
+.todo input:checked:after{content:"";position:absolute;left:6px;top:1px;width:6px;height:12px;border:solid var(--ink);border-width:0 3px 3px 0;transform:rotate(40deg)}
+.todo input:checked+span{text-decoration:line-through;color:var(--muted)}
+.prog{margin:0 0 8px;font-size:.9rem;color:var(--muted)}
+footer{text-align:center;color:var(--muted);padding:10px 16px 50px;font-size:.9rem}
+/* 動畫 */
+@keyframes pop{0%{transform:scale(.88) translateY(10px);opacity:.3}60%{transform:scale(1.04) translateY(-4px);opacity:1}100%{transform:none}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes drift{0%,100%{transform:translateX(0)}50%{transform:translateX(14px)}}
+@keyframes wave{0%,100%{transform:translateX(0)}50%{transform:translateX(-12px)}}
+@keyframes roll{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
+@keyframes flap{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(-4deg)}}
+.a-sun{animation:bob 4s ease-in-out infinite}
+.a-cloud{animation:drift 7s ease-in-out infinite}
+.a-cloud2{animation:drift 9s ease-in-out infinite reverse}
+.a-wave{animation:wave 4s ease-in-out infinite}
+.a-wave2{animation:wave 5s ease-in-out infinite reverse}
+.a-train{animation:roll 5s ease-in-out infinite}
+.a-bird{animation:flap 2.6s ease-in-out infinite;transform-origin:center}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <a class="home" href="index.html">← 首頁</a>
+  <a class="m" href="#flight">航班</a><a class="m" href="#plan">行程</a><a class="m" href="#todo">待辦</a><a class="m" href="#stay">住宿</a>
+</div></nav>
+
+<div class="wrap">
+<header class="hero">
+  <svg class="art" viewBox="0 0 360 200" role="img" aria-label="釜山插畫：廣安大橋、彩色海岸列車、燈塔與海鷗">
+    <g class="a-sun"><circle cx="292" cy="46" r="24" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/></g>
+    <g class="a-cloud"><path d="M40 52h58a14 14 0 0 0-6-26 18 18 0 0 0-34-4 16 16 0 0 0-18 30z" fill="#fff" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></g>
+    <g class="a-cloud2"><path d="M170 36h40a10 10 0 0 0-3-19 13 13 0 0 0-25-2 11 11 0 0 0-12 21z" fill="#fff" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></g>
+    <g class="a-bird"><path d="M236 70q8-9 16 0q8-9 16 0" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/></g>
+    <!-- 燈塔 -->
+    <g><path d="M300 150l6-52h18l6 52z" fill="#fff" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+       <path d="M304 122h28l2 -14h-32z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+       <rect x="308" y="84" width="20" height="14" rx="3" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+       <path d="M306 84l12-14l12 14z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></g>
+    <!-- 廣安大橋 -->
+    <g fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M0 132h250"/>
+      <path d="M92 132V66M170 132V66" stroke-width="5"/>
+      <path d="M0 126q46-6 92-60q39 48 78 0q40 54 80 60" stroke="#F2A497"/>
+      <path d="M112 128v-38M132 128v-30M152 128v-38" stroke-width="2"/>
+    </g>
+    <!-- 海 -->
+    <rect x="0" y="150" width="360" height="50" fill="#A8D3E6"/>
+    <path d="M0 150h360" stroke="#3E3A39" stroke-width="3"/>
+    <g class="a-wave"><path d="M-10 170q15-10 30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/></g>
+    <g class="a-wave2"><path d="M-10 188q15-10 30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0t30 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/></g>
+    <!-- 彩色海岸列車 -->
+    <g class="a-train" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round">
+      <rect x="14" y="108" width="52" height="26" rx="8" fill="#F2A497"/>
+      <rect x="68" y="108" width="52" height="26" rx="8" fill="#F6D27A"/>
+      <rect x="122" y="108" width="52" height="26" rx="8" fill="#B9DAA5"/>
+      <rect x="22" y="114" width="14" height="10" rx="3" fill="#fff"/><rect x="42" y="114" width="14" height="10" rx="3" fill="#fff"/>
+      <rect x="76" y="114" width="14" height="10" rx="3" fill="#fff"/><rect x="96" y="114" width="14" height="10" rx="3" fill="#fff"/>
+      <rect x="130" y="114" width="14" height="10" rx="3" fill="#fff"/><rect x="150" y="114" width="14" height="10" rx="3" fill="#fff"/>
+      <circle cx="34" cy="136" r="4" fill="#fff"/><circle cx="52" cy="136" r="4" fill="#fff"/><circle cx="88" cy="136" r="4" fill="#fff"/><circle cx="106" cy="136" r="4" fill="#fff"/><circle cx="142" cy="136" r="4" fill="#fff"/><circle cx="160" cy="136" r="4" fill="#fff"/>
+    </g>
+  </svg>
+  <h1>釜山 5天4夜</h1>
+  <p>輕鬆順路，慢慢愛上釜山</p>
+  <div class="count" id="count" aria-live="polite">
+    <div><b id="cd">–</b><small>天</small></div><div><b id="ch">–</b><small>小時</small></div><div><b id="cm">–</b><small>分</small></div>
+  </div>
+  <p class="count-note" id="cn">距離 5/19（三）02:35 起飛</p>
+</header>
+
+<section class="blk" id="flight">
+  <h2>✈️ 航班</h2>
+  <details class="box sky"><summary>去程｜5/19（三）</summary>
+    <div class="fl out"><span class="ab">去</span><span class="tm">02:35 ➔ 06:05</span><b class="al">易斯達航空</b><small>台北 ➔ 釜山，約 2 小時 30 分・行李 15kg・NT$5,850</small></div>
+  </details>
+  <details class="box yel"><summary>回程｜5/23（日）・A、B 擇一</summary>
+    <div class="fl ra"><span class="ab">A</span><span class="tm">20:45 ➔ 22:10</span><b class="al">台灣虎航</b><small>釜山 ➔ 台北，約 2 小時 25 分・行李 25kg・NT$5,550</small></div>
+    <div class="fl rb"><span class="ab">B</span><span class="tm">22:10 ➔ 00:15<sup>+1</sup></span><b class="al">易斯達航空</b><small>釜山 ➔ 台北，約 3 小時 5 分・行李 15kg・NT$5,470</small></div>
+    <p style="margin:6px 0 0">來回總價：去程＋A <b>NT$11,400</b>　｜　去程＋B <b>NT$11,320</b></p>
+    <small>※ 時間皆為當地時間，建議起飛前 2.5–3 小時抵達機場。B 比 A 多約 1 小時 25 分可玩。實際班次與價格以訂票結果為準。</small>
+  </details>
+</section>
+
+<section class="blk" id="plan">
+  <h2>🗓️ 每日行程</h2>
+  <div class="days" id="days" role="tablist"></div>
+  <div class="day" id="day"></div>
+</section>
+
+<section class="blk" id="todo">
+  <h2>✅ 出發前待辦</h2>
+  <p class="prog" id="prog"></p>
+  <ul class="todo" id="todolist"></ul>
+</section>
+
+<section class="blk" id="stay">
+  <h2>🏨 住宿資訊</h2>
+  <div class="box grn lodge"><h3>一間飯店住到底</h3><p>全程入住西面，地鐵 1、2 號線直達東西兩側，不換飯店、省時省力。</p></div>
+  <details class="box lodge"><summary>飯店（1 間）</summary>
+    <p><a href="https://reurl.cc/6XrVqk" target="_blank" rel="noopener">西面登巴斯塔中央飯店</a>（4 床）約 NT$32,000</p>
+  </details>
+  <details class="box lodge"><summary>公寓（3 間）</summary>
+    <p><a href="https://reurl.cc/EYE861" target="_blank" rel="noopener">207stay korea</a>（4 床・田浦站附近）約 NT$38,500</p>
+    <p><a href="https://reurl.cc/k9DNOb" target="_blank" rel="noopener">201 JH Blossom Stay Jeonpo</a>（3 床）約 NT$37,000</p>
+    <p><a href="https://reurl.cc/k9DNyG" target="_blank" rel="noopener">Soul Stay 2</a>（3 床）約 NT$31,000</p>
+  </details>
+  <div class="box yel"><h3>🎫 48 小時 Busan Pass</h3><p style="margin:0">Day 2 下午 Skyline Luge 才啟用，用到 Day 4 下午約 16:00（13:30 的 ARTE MUSEUM 還來得及）。</p></div>
+</section>
+</div>
+
+<footer>願你把釜山的海風、美食與好心情，都帶回家 🌊</footer>
+
+<script>
+(function(){
+  var G=function(q){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q)};
+  // tags: m=地鐵 r=車/計程車 p=Pass b=預約 o=其他
+  var D=[
+  {d:'5/19（三）',h:'第一眼釜山：遇見小王子、逛港邊市場與南浦洞美食',s:'一早登上彩色山城，午後走進港邊市場與街頭小吃，黃昏看釜山港亮燈，夜裡逛夜市或吃頓熱騰騰的正餐。',n:[
+    {t:'06:05',h:'抵達釜山・寄放行李',p:'入境、領 Pass 券後，搭計程車到西面寄放行李。最晚 08:00 要從西面出發。',g:[['r','🚕 計程車到西面']]},
+    {t:'08:00',h:'早餐（札嘎其站附近）',eat:1,o:[['EGG DROP','https://maps.app.goo.gl/5UprEAe8Ki4N3hEE9','首選，08:00 營業，可外帶到天空展望台吃'],['新昌吐司',G('新昌吐司 札嘎其 釜山'),'備選，週三沒營業']],g:[['m','🚇 1 號線到札嘎其站，步行約 6 分鐘']]},
+    {t:'09:10',h:'甘川文化村',must:1,p:'計程車直達最高點入口，先在天空展望台吃早餐，再一路往下走逛彩色小屋，別忘了拍小王子。可能要排隊。',g:[['r','🚕 計程車約 20 分鐘'],['o','體驗活動需自費']],l:G('甘川文化村 釜山')},
+    {t:'11:30',h:'午餐：札嘎其市場／新東亞水產市場',eat:1,p:'兩個市場相鄰，1 樓挑活海鮮，再請店家料理。',o:[['札嘎其市場',G('札嘎其市場 釜山'),'2 樓代客料理，溝通最輕鬆'],['新東亞水產物綜合市場',G('新東亞水產物綜合市場 釜山'),'在地人多，3 樓生魚片專區；熱門攤位 85、87 號']],g:[['r','🚕 計程車約 10–15 分鐘'],['o','二選一']]},
+    {t:'14:00',h:'南浦洞輕鬆逛',p:'國際市場（韓國棉被，有需要再去）、BIFF 廣場的元祖堅果黑糖餅、KPOP FRIENDS 南浦店。',o:[['國際市場','https://maps.app.goo.gl/EyERvYPJmSbWhqT99',''],['KPOP FRIENDS 南浦店','https://maps.app.goo.gl/R9k9xuAm42h5nhDX8','']]},
+    {t:'17:00',h:'樂天百貨光復店・空中花園',must:1,p:'登上頂樓空中花園，看釜山港黃昏與影島大橋；同棟 B1 超市可買零食伴手禮。',l:'https://maps.app.goo.gl/mubAr2osryfvZjv68'},
+    {t:'19:00',h:'晚餐（三選一）',eat:1,o:[['A. 富平罐頭市場夜市',G('富平罐頭市場 釜山'),'19:30 出發逛，魚板、辣炒年糕、糖餅'],['B. 南浦洞坐著吃','https://maps.app.goo.gl/pkTuyPyWiUsajvN89','味贊王鹽烤肉富平店、南浦參雞湯、金剛部隊鍋、李才模披薩'],['C. Handasot 韓多鍋 南浦店（優先）','https://maps.app.goo.gl/w4w7swTQ5CqWsbSu7','招牌釜飯，Creatrip 預訂']],g:[['b','Handasot 需預訂']]},
+    {t:'21:30',h:'返回西面飯店',p:'地鐵末班車約 23:30。',g:[['m','🚇 南浦站搭 1 號線到西面，約 20 分鐘']]}
+  ]},
+  {d:'5/20（四）',h:'蔚藍海岸巡禮：搭列車看海，訪古寺、滑車，晚上大啖雪蟹',s:'先搭彩色列車遇見海，在青沙浦拍照喝咖啡吃午餐，再到松亭逛海上古寺、玩斜坡滑車，晚上在機張吃大隻雪蟹。',n:[
+    {t:'08:00',h:'早餐（尾浦站附近）',eat:1,o:[['兔子咖啡',G('兔子咖啡 尾浦 釜山'),'08:00 營業，貝果與海鹽拿鐵'],['極東豬肉湯飯',G('極東豬肉湯飯 尾浦 釜山'),'08:00 營業'],['自然島鹽麵包','https://maps.app.goo.gl/ieg5qLnduy1hKhQ4A','9:00 營業，一袋 4 入 ₩12,000，外帶上車吃']],g:[['m','🚇 2 號線到中洞站（7 號出口）步行約 18 分鐘']]},
+    {t:'09:30',h:'海岸列車／天空膠囊列車',must:1,p:'坐進行駛在高空舊鐵道上、色彩繽紛的小車廂，窗外就是蔚藍海景。搭海岸列車，幸運的話可以搭到天空膠囊列車（一日自由券 ₩16,000）。9:00 前到尾浦站。',g:[['b','需預約'],['o','自費票'],['r','🚃 尾浦站 ➔ 青沙浦站約 30 分鐘']],l:G('海雲台天空膠囊列車 尾浦站 釜山')},
+    {t:'10:15',h:'青沙浦：平交道・Orb Coffee・天空步道',p:'先到灌籃高手平交道拍照，再到 Orb Coffee Salon 看海喝咖啡，最後走天空步道看紅白雙燈塔。',o:[['青沙浦平交道','https://maps.app.goo.gl/Y7zmPEuVrv3YKuZE6',''],['Orb Coffee Salon','https://maps.app.goo.gl/aNBXgw6peF4s4ZHE6',''],['天空步道','https://maps.app.goo.gl/tDukQ4CWWFRNX9Va7','天候不佳可能關閉']]},
+    {t:'11:45',h:'青沙浦午餐',eat:1,o:[['青沙浦冬柏家','https://maps.app.goo.gl/2dYQehtigzmptZFc6','烤貝拼盤與海鮮拉麵'],['Jogae View','https://maps.app.goo.gl/PVN5Y9gsPqZvwC376','起司龍蝦與綜合貝類，無牛'],['玉伊大麥飯','https://maps.app.goo.gl/FmFHkwwrfzZGVDrPA','野菜大麥飯、海鮮韭菜煎餅'],['all barut kitchen','https://maps.app.goo.gl/FqBZpjRANTy5BfH3A','招牌泥蚶拌飯']],g:[['o','建議用餐約 2 小時']]},
+    {t:'14:00',h:'海雲台海岸列車',p:'沿著海岸線行駛，座位全面向海。早上已買一日自由券的話，這段不用另買。',g:[['o','自費票 ₩8,000'],['r','🚃 青沙浦站 ➔ 松亭站約 30 分鐘']],l:'https://maps.app.goo.gl/Jy55n6xGthVgoG6k7'},
+    {t:'15:00',h:'海東龍宮寺',must:1,p:'依海而建的千年古寺，海浪聲伴著古剎。入口有石階，建議停留約 1 小時。',g:[['r','🚕 松亭站叫 Uber 約 10 分鐘']],l:G('海東龍宮寺 釜山')},
+    {t:'16:00',h:'Skyline Luge 斜坡滑車',must:1,p:'搭吊椅上山，再乘滑車順著斜坡俯衝而下，約停留 1.5 小時。這是 Pass 第一個使用的景點，48 小時從這裡起算。建議 16:30 前抵達。',g:[['p','Pass 免費'],['r','🚕 Uber 約 5 分鐘']],l:G('Skyline Luge Busan')},
+    {t:'18:00',h:'機張市場・雪蟹晚餐',eat:1,must:1,p:'品嚐熱騰騰的機張大隻雪蟹，最後用蟹膏加白飯炒成蟹膏炒飯。吃約 2 小時，最晚入座約 19:30–20:00。',g:[['r','🚕 Skyline Luge ➔ 機張市場約 20 分鐘']],l:G('機張市場 釜山')},
+    {t:'21:00',h:'返回西面飯店',p:'隔天約 9:00 出發，可以睡晚一點。',g:[['m','🚇 東海線＋1 號線約 55 分鐘']]}
+  ]},
+  {d:'5/21（五）',h:'悠閒海灣日：泡汗蒸幕、坐遊艇追夕陽，夜裡到 Bay 101 看燈海',s:'上午在海雲台吃早餐、逛海理團路，午後到 Centum City 泡汗蒸幕，傍晚搭遊艇看廣安大橋，再到 The Bay 101 欣賞夜景。',n:[
+    {t:'09:00',h:'早餐：EGG DROP',eat:1,p:'海雲台站 7 號出口，07:00 營業。吃完直接走到海理團路。',g:[['m','🚇 2 號線到海雲台站約 40 分鐘']],l:'https://maps.app.goo.gl/4Lr3sgo1ZEq5A5jJ6'},
+    {t:'11:00',h:'海理團路',p:'海邊小巷街區，多半 11:00 才開門。逛香氛、伴手禮（Busan Bada Sand 焦糖奶油夾心餅乾）、拍貼機。帶護照退稅。',l:G('海理團路 釜山')},
+    {t:'12:30',h:'SPA LAND 汗蒸幕（Centum City）',must:1,p:'位於新世界百貨內，憑 Pass 免費入場 4 小時，16:30 前離開。園內有小點心到正餐，午餐可在這裡吃。',g:[['p','Pass 免費'],['m','🚇 2 號線到 Centum City 站約 20 分鐘']],l:G('SPA LAND Centum City 釜山')},
+    {t:'16:45',h:'南川洞麵包街',p:'OPS 烘培屋：必買招牌大顆卡士達泡芙、蘋果派與起司蛋糕。',g:[['m','🚇 2 號線到南川站約 10 分鐘']],l:'https://maps.app.goo.gl/yRfPVPfiohM3GgTC8'},
+    {t:'18:00',h:'Yacht Holic 日落遊艇',must:1,p:'在廣安里海洋休閒運動中心上船，搭 18:30 這場約 1 小時；預約時段前 30 分鐘到現場報到。船上免費提供小點心、飲料與啤酒。遊艇搭不上，就改到廣安里海灘看廣安大橋夜景（燈光秀只有週六）。',g:[['b','需預約'],['p','Pass 券 8 折']],l:'https://maps.app.goo.gl/61eSg4GdgN9Rq6aM7'},
+    {t:'19:30',h:'廣安里晚餐（二選一）',eat:1,o:[['水邊最高豬肉湯飯 廣安店','https://maps.app.goo.gl/W1HGLVH2W92HFYgt9','Catchtable 線上候位'],['Dosaegi 烤黑豬肉','https://maps.app.goo.gl/6wAuU88qzZEwqBWd6','無法訂位']]},
+    {t:'21:10',h:'The Bay 101 夜景',must:1,p:'高樓燈光倒映在水面上，散步看夜景，停留約 40 分鐘。',g:[['r','🚕 計程車約 10 分鐘']],l:G('The Bay 101 釜山')},
+    {t:'22:30',h:'返回西面飯店',p:'地鐵末班車約 23:30；隔天約 8:10 出發去松島，別太晚睡。',g:[['m','🚇 冬柏站（1 號出口）搭 2 號線約 30 分鐘']]}
+  ]},
+  {d:'5/22（六）',h:'飛越海面的奇幻視角：松島纜車、ARTE MUSEUM 與白淺灘',s:'上午逛松島龍宮雲橋、搭纜車、走天空步道，中午吃松島海鮮；下午看沉浸式展覽，再到白淺灘喝下午茶，晚上吃烤肉。',n:[
+    {t:'09:15',h:'松島龍宮雲橋',must:1,p:'約 8:10 從西面出發。在松島海面上的步道漫步拍照，約 45 分鐘；樓梯較多，腳力不好可縮短。',g:[['p','Pass 免費'],['m','🚇 1 號線到札嘎其站（2 號出口）轉公車約 1 小時']],l:G('松島龍宮雲橋 釜山')},
+    {t:'10:15',h:'松島海上纜車',must:1,p:'搭纜車前，先在岩南公園海岸觀景台逛一下；搭纜車橫跨海面到松島灣線車站，可選水晶車廂，腳下就是大海。',g:[['p','Pass 免費'],['r','🚡 搭乘約 10 分鐘']],l:'https://maps.app.goo.gl/cT29wgyrtWuuA4Dq6'},
+    {t:'10:30',h:'松島天空步道',p:'拍海景與透明玻璃步道，再走一小段拍人魚公主與龜島合照。',l:G('松島天空步道 釜山')},
+    {t:'11:00',h:'松島午餐（三選一）',eat:1,o:[['海底貝殼王國','https://maps.app.goo.gl/X67YXxzmizhCY9Vz8','現烤貝類海鮮，有桌邊代烤'],['松島海솥','https://maps.app.goo.gl/ov5HXJJ2C62gz6mt9','韓式海景釜飯，一人份友善'],['松島海鮮刀削麵（推薦）','https://maps.app.goo.gl/UNNdpE96Mmef4pZA9','韓式海鮮湯麵，CP 值最高']],g:[['o','建議用餐約 2 小時']]},
+    {t:'13:30',h:'ARTE MUSEUM 釜山',must:1,p:'大型沉浸式媒體藝術館，全場光影投影，室內不怕曬也不怕雨。停留約 2 小時；穿淺色系服裝拍照效果最好。Pass 約 16:00 到期，13:30 進場有充足緩衝。',g:[['p','Pass 免費'],['r','🚕 計程車約 20 分鐘']],l:G('Arte Museum Busan')},
+    {t:'15:45',h:'白淺灘文化村・下午茶',must:1,p:'彩虹樓梯與海景小村，找間咖啡廳喝下午茶，坡道多，放慢腳步。可提早離開。',g:[['r','🚕 計程車約 10 分鐘']],l:'https://maps.app.goo.gl/XjDMScNcACZUsPKSA'},
+    {t:'17:30',h:'烤肉晚餐（五選一）',eat:1,p:'用餐約 1.5–2 小時。A 排不到就改 D，人太多再改 E。',o:[['A. 83 獬豸（優先）','','西面站步行約 2 分鐘；17:40 開放線上候位，先用手機抽號'],['B. 味贊王鹽烤肉 西面店','','不能預約，約等 30–50 分鐘'],['C. 明倫進士排骨 西面店','','不能預約，預期要排'],['D. 味贊王鹽烤肉 富平店','https://maps.app.goo.gl/pkTuyPyWiUsajvN89','可預約，車程約 12 分鐘'],['E. 烤肉男子 南浦店','','D 人太多時的備案']]},
+    {t:'20:00',h:'回飯店休息',p:'雨天備案：下雨的話可把白淺灘縮短，或和 ARTE 對調。隔天 Day 5 可以睡晚一點。'}
+  ]},
+  {d:'5/23（日）',h:'最後的悠閒：田浦咖啡街、豬肉湯飯與西面採買',s:'睡到自然醒，退房後在田浦吃早餐、逛咖啡街與選物店，午餐吃暖胃的豬肉湯飯，下午逛西面，帶著小吃去機場。',n:[
+    {t:'10:00',h:'慢慢起床・退房',p:'把行李寄放在飯店，輕裝出門。退房時間依飯店規定。'},
+    {t:'10:30',h:'田浦早餐（二選一）',eat:1,o:[['Your Type Jeonpo','https://maps.app.goo.gl/X4vZoWbc2S1quWE39','9:00 營業，培根法式鹹薄餅'],['Old Mont Bagel','https://maps.app.goo.gl/VhBvv6ENSrBYxy819','10:00 營業，火腿起司貝果與手作濃湯']]},
+    {t:'11:30',h:'田浦咖啡街・選物店',p:'逛逛質感選物店、喝杯咖啡。多數店家約 11:30–12:00 開門。'},
+    {t:'13:30',h:'松亭三代豬肉湯飯',eat:1,p:'最後一頓正餐來碗熱騰騰的豬肉湯飯，暖胃又滿足。',g:[['m','西面']],l:'https://maps.app.goo.gl/mkaGLdB2H6eVKb2h6'},
+    {t:'15:00',h:'西面逛街採買',p:'Butter shop、大創、OLIVE YOUNG、ADER ERROR、Musinsa Standard，也可逛西面地下街。搭方案 B 可逛到約 17:30。伴手禮趁早買，易融化的留到最後。'},
+    {t:'16:30',h:'買小吃帶去機場',eat:1,p:'買魚板、辣炒年糕或炸雞，帶去機場吃。方案 B 約 17:30–18:30。'},
+    {t:'17:15',h:'快樂返程',must:0,p:'方案 A（虎航 20:45）：約 17:15 回飯店拿行李，約 18:00 到機場。方案 B（易斯達 22:10）：約 18:30 出發，約 19:15 到機場。期待下次再見，釜山！'}
+  ]}
+  ];
+  var TAG={m:'metro',r:'ride',p:'pass',b:'book',o:'opt'};
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function render(i){
+    var d=D[i],h='<div class="dayhead"><h3>DAY '+(i+1)+'・'+esc(d.d)+'<br>'+esc(d.h)+'</h3><p>'+esc(d.s)+'</p></div><ul class="tl">';
+    d.n.forEach(function(x){
+      var title=esc(x.h);
+      if(x.l)title='<a href="'+x.l+'" target="_blank" rel="noopener">'+title+'</a>';
+      h+='<li class="'+(x.must?'must ':'')+(x.eat?'eat':'')+'"><div class="card'+(x.must?' must':'')+(x.eat?' eat':'')+'"><span class="tm">'+x.t+'</span><h4>'+title+'</h4>'+(x.must?'<span class="must-tag">必去</span>':'');
+      if(x.g){h+='<div class="tags">'+x.g.map(function(g){return '<span class="tag '+TAG[g[0]]+'">'+esc(g[1])+'</span>'}).join('')+'</div>'}
+      if(x.p)h+='<p>'+esc(x.p)+'</p>';
+      if(x.o)h+='<ul>'+x.o.map(function(o){return '<li>'+(o[1]?'<a href="'+o[1]+'" target="_blank" rel="noopener">'+esc(o[0])+'</a>':esc(o[0]))+(o[2]?'：'+esc(o[2]):'')+'</li>'}).join('')+'</ul>';
+      h+='</div></li>';
+    });
+    return h+'</ul>';
+  }
+  var days=document.getElementById('days'),box=document.getElementById('day');
+  days.innerHTML=D.map(function(d,i){return '<button type="button" role="tab" data-i="'+i+'">Day '+(i+1)+'<small>'+d.d.replace(/（.）/,'')+'</small></button>'}).join('');
+  function show(i,anim){
+    [].forEach.call(days.children,function(b,k){b.classList.toggle('on',k===i);b.setAttribute('aria-selected',k===i)});
+    box.innerHTML=render(i);
+    if(anim){
+      [box,days.children[i]].forEach(function(e){e.classList.remove('pop');void e.offsetWidth;e.classList.add('pop')});
+    }
+  }
+  days.addEventListener('click',function(e){var b=e.target.closest('button');if(b)show(+b.dataset.i,true)});
+  var m=/^#d([1-5])$/.exec(location.hash);
+  show(m?+m[1]-1:0,false);
+
+  // 出發倒數（台北時間 2027/5/19 02:35）
+  var T=new Date('2027-05-19T02:35:00+08:00').getTime();
+  function tick(){
+    var ms=T-Date.now(),cn=document.getElementById('cn');
+    if(ms<=0){document.getElementById('cd').textContent='0';document.getElementById('ch').textContent='0';document.getElementById('cm').textContent='0';cn.textContent='出發囉！玩得開心 ✈️';return}
+    var m=Math.floor(ms/60000);
+    document.getElementById('cd').textContent=Math.floor(m/1440);
+    document.getElementById('ch').textContent=Math.floor(m%1440/60);
+    document.getElementById('cm').textContent=m%60;
+  }
+  tick();setInterval(tick,30000);
+
+  // 待辦清單（勾選只存在這支瀏覽器）
+  var TODO=['確認護照效期（回程日起還有 6 個月以上）','訂好機票：去程易斯達，回程擇一（虎航 A／易斯達 B）','訂住宿並確認入住日期與寄放行李','購買 48 小時 Busan Pass，確認 Day 2 起算','預約 Yacht Holic（Day 3 18:30 場）','預約海岸列車／天空膠囊列車（Day 2）','Creatrip 預訂 Handasot 韓多鍋（Day 1 晚餐）','出發前填寫 Q-CODE 入境資料','準備網路（eSIM 或網卡）與行動電源','下載 Naver Map、Uber 等 App','換少量韓幣、確認信用卡海外刷卡','Day 4 當天 17:40 前準備好抽 83 獬豸線上候位'];
+  var KEY='busan-book-todo',saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(x){}
+  var ul=document.getElementById('todolist');
+  ul.innerHTML=TODO.map(function(t,i){return '<li><label><input type="checkbox" data-i="'+i+'"'+(saved[i]?' checked':'')+'><span>'+esc(t)+'</span></label></li>'}).join('');
+  function prog(){var c=ul.querySelectorAll('input:checked').length;document.getElementById('prog').textContent='已完成 '+c+' / '+TODO.length+'（勾選只存在這支瀏覽器）'}
+  ul.addEventListener('change',function(e){
+    saved[e.target.dataset.i]=e.target.checked?1:0;
+    try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(x){}
+    prog();
+  });
+  prog();
+})();
+</script>
+</body>
+</html>

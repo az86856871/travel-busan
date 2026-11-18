@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>釜山 5天4夜輕鬆順路行程表(易斯達版・備案)</title>
+<title>釜山 5天4夜輕鬆順路行程表(豪華版)</title>
 <style>
 :root{
   --bg:#f4f9fc; --card:#ffffff; --ink:#1f2d3a; --muted:#5d6f7e;
@@ -26,6 +26,7 @@ body{margin:0;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans
 .fact span{color:var(--muted);font-size:.93rem}
 .flight{background:var(--card);border-radius:14px;padding:16px 18px;margin-bottom:24px;border:1px solid var(--line);color:var(--muted);font-size:.93rem}
 .flight>b{display:block;color:var(--primary-d);margin-bottom:8px}
+.flight summary{cursor:pointer;font-weight:700;color:var(--primary-d)}
 .flight .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
 .flight em{display:block;font-style:normal;font-weight:700;color:var(--ink);margin-bottom:4px}
 .flight .price{color:var(--card);margin-left:4px}
@@ -61,13 +62,17 @@ nav a.on{background:var(--primary);color:#fff;border-color:var(--primary)}
 .route small{font-size:.85rem;font-weight:400}
 .period{margin:22px 0 8px;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:8px}
 .period::after{content:"";flex:1;height:1px;background:var(--line)}
-.card{background:var(--card);border-radius:14px;padding:16px 18px;margin-bottom:12px;border:1px solid var(--line)}
+.card{position:relative;background:var(--card);border-radius:14px;padding:16px 18px;margin-bottom:12px;border:1px solid var(--line)}
 .card h3{margin:0 0 6px;font-size:1.1rem}
 .card p{margin:0;color:#34495a}
 .tag{display:inline-block;font-size:.75rem;font-weight:700;color:#fff;border-radius:6px;padding:1px 8px;margin-left:6px;vertical-align:middle}
 .tag.paid{background:var(--paid)} .tag.pass{background:var(--pass)} .tag.free{background:var(--free)} .tag.opt{background:#8896a3} .tag.metro{background:var(--primary)} .tag.ride{background:#a8553a}.tip{background:#fff6ec;border-left:5px solid var(--accent);border-radius:10px;padding:14px 16px;margin-top:16px;margin-bottom:12px}
 .tip b{color:#c4501f}
 .eat{background:#fffdf3;border-color:#f3e6a8}
+.card.book{background:#fff8fb;border-color:#f8d9e5;border-left:5px solid #e58aab}
+.tag.book{background:#d6336c}
+.card.hotc{margin-top:20px}
+.tag.hot{position:absolute;top:-11px;left:-6px;margin:0;width:28px;height:28px;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem;line-height:1;background:#fff3d6;border:2px solid #ffb84d;box-shadow:0 1px 4px rgba(255,150,40,.4);transform:rotate(-14deg)}
 footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9rem}
 @media(max-width:480px){.hero h1 .big{font-size:2rem}.hero h1 .sub{font-size:.9rem}.hero p{font-size:.8rem}}
 @media print{nav{display:none}.day{display:block!important;page-break-inside:avoid}}
@@ -83,7 +88,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
 
 <header class="hero"><a class="back" href="index.html">← 回首頁</a>
   <small>BUSAN · SOUTH KOREA</small>
-  <h1><span class="big">釜山 5天4夜</span><br><span class="sub">輕鬆順路，慢慢愛上釜山</span><br><span class="ver">易斯達版・備案</span></h1>
+  <h1><span class="big">釜山 5天4夜</span><br><span class="sub">輕鬆順路，慢慢愛上釜山</span><br><span class="ver">豪華版</span></h1>
   <p id="tagline">住進西面，搭地鐵輕鬆玩遍釜山。</p>
 </header>
 
@@ -94,7 +99,8 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
     <div class="fact"><b>🍲 吃得暖、吃得安心</b><span>港邊海鮮市場、青沙浦烤貝、機張雪蟹，豬肉湯飯、釜飯與韓式烤肉，再配夜市小吃、吐司麵包與咖啡，每天都吃得不一樣。</span></div>
   </section>
   <section class="flight">
-    <b>✈️ 暫定航班（直達）</b>
+    <details>
+    <summary>✈️ 暫定航班（直達）</summary>
     <h4>去程｜5/19（三）</h4>
     <div class="fl out"><span class="ab">去</span><span class="tm">02:35 ➔ 06:05</span>　<b class="al">易斯達航空</b>（台北 ➔ 釜山，約 2 小時 30 分）<small>行李 15kg・NT$5,850</small></div>
     <h4>回程｜5/23（日）・A、B 擇一</h4>
@@ -103,6 +109,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
     <h4>來回總價</h4>
     <p>去程＋回程 A：<b>NT$11,400</b>　｜　去程＋回程 B：<b>NT$11,320</b></p>
     <p><small>※ 時間皆為當地時間。B 比 A 多約 1 小時 25 分可玩。實際班次與價格以訂票結果為準。</small></p>
+  </details>
   </section>
 </div>
 
@@ -124,7 +131,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
   <div class="card eat"><h3>早餐選擇（札嘎其站附近）</h3><p><b>首選：<a href="https://maps.app.goo.gl/5UprEAe8Ki4N3hEE9" target="_blank" rel="noopener">EGG DROP</a></b>：08:00 營業，可外帶到天空展望台吃（外帶 ₩100）；<a href="https://sites.google.com/view/eggdrop-haeundae/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">中文菜單</a>；<a href="image/EGG_DROP%E5%90%90%E5%8F%B8%E5%9C%96.jpg" download="EGG_DROP吐司圖.jpg">吐司內容物參考</a>。<br><b>備選</b>：<a href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E6%98%8C%E5%90%90%E5%8F%B8%20%E6%9C%AD%E5%98%8E%E5%85%B6%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">新昌吐司</a>（<b style="color:#d6336c">週三沒營業</b>）、釜山正宗飯捲。<br><small>※ 西面搭 1 號線到札嘎其站（7 號出口），步行約 6 分鐘。</small></p></div>
 
   <div class="period">🌈 甘川文化村</div>
-  <div class="card"><h3>甘川文化村 <span class="tag ride">🚕 買完早餐搭計程車上山，約 20 分鐘</span></h3><p>計程車直達<b>最高點入口</b>，先在天空展望台吃早餐，再「一路往下走」逛彩色小屋，別忘了拍<b>小王子</b>。<br><small>※ 約 9:10 抵達，可能要排隊。</small></p></div>
+  <div class="card hotc"><h3><span class="tag hot">🔥</span>甘川文化村<span class="tag ride">🚕 買完早餐搭計程車上山，約 20 分鐘</span></h3><p>計程車直達<b>最高點入口</b>，先在天空展望台吃早餐，再「一路往下走」逛彩色小屋，別忘了拍<b>小王子</b>。<br><small>※ 約 9:10 抵達，可能要排隊。</small></p></div>
   <div class="tip"><b>💡 體驗活動</b><br>韓服體驗、手翻書製作。Day 1 尚不能用 Pass 券，需自費。</div>
 
   <div class="period">🍜 午餐</div>
@@ -138,7 +145,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
   <div class="card"><h3>KPOP FRIENDS 南浦店</h3><p>K-pop 周邊小物店，挑專輯與紀念品。</p></div>
 
   <div class="period">🌇 傍晚・樂天百貨</div>
-  <div class="card"><h3>樂天百貨光復店・空中花園</h3><p>登上頂樓空中花園，看釜山港黃昏與影島大橋。</p></div>
+  <div class="card hotc"><h3><span class="tag hot">🔥</span>樂天百貨光復店・空中花園</h3><p>登上頂樓空中花園，看釜山港黃昏與影島大橋。</p></div>
   <div class="card"><h3>樂天百貨超市 <span class="tag opt">同一棟 B1</span></h3><p>零食與伴手禮一次買齊；冷藏或易融化的留到最後再買。</p></div>
 
   <div class="period">🍜 晚餐（三選一）</div>
@@ -155,13 +162,13 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
   <div class="day-head"><span class="no">DAY 2</span>
     <h2>蔚藍海岸巡禮：搭列車看海，訪完古寺滑車俯衝，晚上大啖雪蟹</h2>
     <p class="teaser">先搭彩色膠囊列車遇見海，在青沙浦拍照、喝咖啡、吃午餐；再搭海岸列車到松亭，接著逛海上古寺、玩斜坡滑車，晚上在機張吃大隻雪蟹。</p></div>
-  <div class="route">西面出發 ➔ <a href="https://www.google.com/maps/search/?api=1&query=海雲台天空膠囊列車%20尾浦站%20釜山" target="_blank" rel="noopener">天空膠囊列車</a> ➔ 青沙浦（<a href="https://maps.app.goo.gl/Y7zmPEuVrv3YKuZE6" target="_blank" rel="noopener">平交道</a>、<a href="https://maps.app.goo.gl/tDukQ4CWWFRNX9Va7" target="_blank" rel="noopener">天空步道</a>、<a href="https://maps.app.goo.gl/aNBXgw6peF4s4ZHE6" target="_blank" rel="noopener">Orb Coffee Salon</a>、午餐）➔ 松亭（<a href="https://maps.app.goo.gl/Jy55n6xGthVgoG6k7" target="_blank" rel="noopener">海岸列車</a>）➔ <a href="https://www.google.com/maps/search/?api=1&query=海東龍宮寺%20釜山" target="_blank" rel="noopener">海東龍宮寺</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=Skyline%20Luge%20Busan" target="_blank" rel="noopener">Skyline Luge 斜坡滑車</a>➔ <a href="https://www.google.com/maps/search/?api=1&query=機張市場%20釜山" target="_blank" rel="noopener">機張市場</a>（晚餐）➔ 返回西面<br><small>🔥 Pass 啟用日｜東半部與機張｜海岸列車自費，Pass 從 Skyline Luge 才啟用</small></div>
+  <div class="route">西面出發 ➔ <a href="https://www.google.com/maps/search/?api=1&query=海雲台天空膠囊列車%20尾浦站%20釜山" target="_blank" rel="noopener">海岸列車／天空膠囊列車</a> ➔ 青沙浦（<a href="https://maps.app.goo.gl/Y7zmPEuVrv3YKuZE6" target="_blank" rel="noopener">平交道</a>、<a href="https://maps.app.goo.gl/tDukQ4CWWFRNX9Va7" target="_blank" rel="noopener">天空步道</a>、<a href="https://maps.app.goo.gl/aNBXgw6peF4s4ZHE6" target="_blank" rel="noopener">Orb Coffee Salon</a>、午餐）➔ 松亭（<a href="https://maps.app.goo.gl/Jy55n6xGthVgoG6k7" target="_blank" rel="noopener">海岸列車</a>）➔ <a href="https://www.google.com/maps/search/?api=1&query=海東龍宮寺%20釜山" target="_blank" rel="noopener">海東龍宮寺</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=Skyline%20Luge%20Busan" target="_blank" rel="noopener">Skyline Luge 斜坡滑車</a>➔ <a href="https://www.google.com/maps/search/?api=1&query=機張市場%20釜山" target="_blank" rel="noopener">機張市場</a>（晚餐）➔ 返回西面<br><small>🔥 Pass 啟用日｜東半部與機張｜海岸列車自費，Pass 從 Skyline Luge 才啟用</small></div>
 
   <div class="period">🌅 清晨・出發</div>
   <div class="card eat"><h3>早餐選擇（尾浦站附近）</h3><p><b><a href="https://www.google.com/maps/search/?api=1&query=%E5%85%94%E5%AD%90%E5%92%96%E5%95%A1%20%E5%B0%BE%E6%B5%A6%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">兔子咖啡</a></b>：08:00 營業，貝果、招牌海鹽拿鐵。<br><b><a href="https://www.google.com/maps/search/?api=1&query=%E6%A5%B5%E6%9D%B1%E8%B1%AC%E8%82%89%E6%B9%AF%E9%A3%AF%20%E5%B0%BE%E6%B5%A6%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">極東豬肉湯飯</a></b>：08:00 營業，豬肉湯飯或綜合湯飯。<br><b><a href="https://maps.app.goo.gl/ieg5qLnduy1hKhQ4A" target="_blank" rel="noopener">自然島鹽麵包</a></b>：9:00 營業，外帶上車吃；不單賣，一袋 4 入（₩12,000）。</p></div>
 
   <div class="period">☀️ 上午・青沙浦</div>
-  <div class="card"><h3>天空膠囊列車 Sky Capsule <span class="tag paid">自費票</span><span class="tag paid">需預約</span><span class="tag ride">🚃 尾浦站 ➔ 青沙浦站 約 30 分鐘</span></h3><p>坐進行駛在高空舊鐵道上、色彩繽紛的小車廂，窗外就是蔚藍海景。<br><small>※ 08:00 從西面出發，搭地鐵 2 號線到中洞站（7 號出口）步行約 18 分鐘，或到海雲台站再叫計程車約 7 分鐘（多人分攤划算）；9:00 前到尾浦站，9:30 發車。</small><br><small>※ <b style="color:#d6336c">沒訂到的話，改搭海岸列車</b>（一日自由券 ₩16,000）。</small></p></div>
+  <div class="card book hotc"><h3><span class="tag hot">🔥</span>海岸列車／天空膠囊列車 Sky Capsule<span class="tag paid">自費票</span><span class="tag book">需預約</span><span class="tag ride">🚃 尾浦站 ➔ 青沙浦站 約 30 分鐘</span></h3><p>坐進行駛在高空舊鐵道上、色彩繽紛的小車廂，窗外就是蔚藍海景。<br><small>※ 08:00 從西面出發，搭地鐵 2 號線到中洞站（7 號出口）步行約 18 分鐘，或到海雲台站再叫計程車約 7 分鐘（多人分攤划算）；9:00 前到尾浦站，9:30 發車。</small><br><small>※ <b style="color:#d6336c">搭海岸列車，幸運的話可以搭到天空膠囊列車</b>（一日自由券 ₩16,000）。</small></p></div>
   <div class="card"><h3>青沙浦平交道・Orb Coffee Salon・天空步道</h3><p>先到「灌籃高手平交道」拍照，再到 Orb Coffee Salon 看海喝咖啡（約 45 分鐘），最後走天空步道，看紅白雙燈塔。<br><small>※ 天空步道免費，天候不佳可能關閉。</small></p></div>
 
   <div class="period">🍜 午餐</div>
@@ -169,11 +176,11 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
 
   <div class="period">🌊 下午・松亭與機張</div>
   <div class="card"><h3>海雲台海岸列車 <span class="tag paid">自費票 ₩8,000</span><span class="tag ride">🚃 青沙浦站 ➔ 松亭站 約 30 分鐘</span></h3><p>沿著海岸線行駛的觀光列車，座位全面向海。約 14:00 搭乘。<br><small>※ 早上已買一日自由券的話，這段不用另買。</small></p></div>
-  <div class="card"><h3>海東龍宮寺 <span class="tag ride">🚕 松亭站叫 Uber，約 10 分鐘</span> <span class="tag free">免門票</span></h3><p>依海而建的千年古寺，海浪聲伴著古剎，景色獨一無二。入口有石階，慢慢走；建議停留約 1 小時。</p></div>
-  <div class="card"><h3>Skyline Luge 斜坡滑車 <span class="tag pass">Pass 免費</span><span class="tag ride">🚕 龍宮寺搭 Uber 約 5 分鐘</span></h3><p>搭吊椅上山，再乘滑車順著斜坡一路俯衝而下，預計停留約 1.5 小時（約 16:00–17:30）。這是 Pass 第一個使用的景點，48 小時從這裡起算。<br><small>※ <b style="color:#d6336c">建議 16:30 前抵達</b>。</small></p></div>
+  <div class="card hotc"><h3><span class="tag hot">🔥</span>海東龍宮寺<span class="tag ride">🚕 松亭站叫 Uber，約 10 分鐘</span> </h3><p>依海而建的千年古寺，海浪聲伴著古剎，景色獨一無二。入口有石階，慢慢走；建議停留約 1 小時。</p></div>
+  <div class="card hotc"><h3><span class="tag hot">🔥</span>Skyline Luge 斜坡滑車<span class="tag pass">Pass 免費</span><span class="tag ride">🚕 龍宮寺搭 Uber 約 5 分鐘</span></h3><p>搭吊椅上山，再乘滑車順著斜坡一路俯衝而下，預計停留約 1.5 小時（約 16:00–17:30）。這是 Pass 第一個使用的景點，48 小時從這裡起算。<br><small>※ <b style="color:#d6336c">建議 16:30 前抵達</b>。</small></p></div>
 
   <div class="period">🍜 晚餐</div>
-  <div class="card eat"><h3>機張市場 <span class="tag ride">🚕 Skyline Luge ➔ 機張市場，建議搭 Uber，約 20 分鐘</span></h3><p>品嚐熱騰騰的<b>機張大隻雪蟹</b>，最後用蟹膏加白飯炒成香氣十足的<b>蟹膏炒飯</b>。<br><small>※ 約 18:00 入座，吃約 2 小時；最晚入座與點餐約 19:30–20:00 前後。</small></p></div>
+  <div class="card eat hotc"><h3><span class="tag hot">🔥</span>機張市場<span class="tag ride">🚕 Skyline Luge ➔ 機張市場，建議搭 Uber，約 20 分鐘</span></h3><p>品嚐熱騰騰的<b>機張大隻雪蟹</b>，最後用蟹膏加白飯炒成香氣十足的<b>蟹膏炒飯</b>。<br><small>※ 約 18:00 入座，吃約 2 小時；最晚入座與點餐約 19:30–20:00 前後。</small></p></div>
 
   <div class="period">🚇 返回西面</div>
   <div class="card"><h3>返回西面飯店 <span class="tag metro">🚇 搭地鐵（東海線＋1 號線），約 55 分鐘</span></h3><p>約 21:00 回到飯店，好好休息。<br><small>※ 隔天約 9:00 出發，可以睡晚一點。</small></p></div>
@@ -188,23 +195,23 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
 
   <div class="period">☀️ 上午・海雲台</div>
   <div class="card eat"><h3><a href="https://maps.app.goo.gl/4Lr3sgo1ZEq5A5jJ6" target="_blank" rel="noopener">早餐：EGG DROP</a> <span class="tag metro">🚇 西面搭 2 號線到海雲台站，約 40 分鐘</span></h3><p>海雲台站 7 號出口，07:00 營業，約 9:00 從西面出發。吃完直接走到海理團路。</p></div>
-  <div class="card"><h3>海理團路 <span class="tag free">免費</span></h3><p>海雲台海邊的小巷街區，多半約 11:00 才開門。逛香氛、限定伴手禮（Busan Bada Sand 焦糖奶油夾心餅乾）、拍貼機。<br><small>※ <b>帶護照退稅</b>。</small></p></div>
+  <div class="card"><h3>海理團路 </h3><p>海雲台海邊的小巷街區，多半約 11:00 才開門。逛香氛、限定伴手禮（Busan Bada Sand 焦糖奶油夾心餅乾）、拍貼機。<br><small>※ <b>帶護照退稅</b>。</small></p></div>
 
   <div class="period">♨️ 中午後・汗蒸幕</div>
-  <div class="card"><h3>SPA LAND 汗蒸幕（Centum City）<span class="tag pass">Pass 免費</span><span class="tag metro">🚇 搭 2 號線到 Centum City 站，約 20 分鐘</span></h3><p>位於新世界百貨內，憑 Pass 免費入場 4 小時，約 12:30 入場、16:30 前離開。園內從小點心（烤雞蛋、甜米露等）到正餐餐廳都有，午餐可在這裡吃。</p></div>
+  <div class="card hotc"><h3><span class="tag hot">🔥</span>SPA LAND 汗蒸幕（Centum City）<span class="tag pass">Pass 免費</span><span class="tag metro">🚇 搭 2 號線到 Centum City 站，約 20 分鐘</span></h3><p>位於新世界百貨內，憑 Pass 免費入場 4 小時，約 12:30 入場、16:30 前離開。園內從小點心（烤雞蛋、甜米露等）到正餐餐廳都有，午餐可在這裡吃。</p></div>
 
   <div class="period">🥐 傍晚・南川洞</div>
   <div class="card"><h3>南川洞麵包街 <span class="tag metro">🚇 Centum City 站搭 2 號線到南川站，約 10 分鐘</span></h3><p><a href="https://maps.app.goo.gl/yRfPVPfiohM3GgTC8" target="_blank" rel="noopener">OPS烘培屋</a>：必買招牌大顆卡士達泡芙、蘋果派與起司蛋糕。</p></div>
 
   <div class="period">🚢 傍晚・日落遊艇</div>
-  <div class="card"><h3>Yacht Holic 傍晚場 <span class="tag pass">Pass 券 8 折</span><span class="tag paid">需預約</span></h3><p>在<a href="https://maps.app.goo.gl/61eSg4GdgN9Rq6aM7" target="_blank" rel="noopener">廣安里海洋休閒運動中心</a>上船。預計搭 18:30 這場，約 1 小時；<b>預約時段前 30 分鐘</b>（約 18:00）到現場報到、填寫資料。出示 Busan Pass 券享 8 折。船上免費提供餅乾小點心、桃子汁、水與啤酒。<br><small>※ 提早到的話，可以先在廣安里海灘邊晃晃。</small></p></div>
+  <div class="card book hotc"><h3><span class="tag hot">🔥</span>Yacht Holic 傍晚場<span class="tag pass">Pass 券 8 折</span><span class="tag book">需預約</span></h3><p>在<a href="https://maps.app.goo.gl/61eSg4GdgN9Rq6aM7" target="_blank" rel="noopener">廣安里海洋休閒運動中心</a>上船。預計搭 18:30 這場，約 1 小時；<b>預約時段前 30 分鐘</b>（約 18:00）到現場報到、填寫資料。出示 Busan Pass 券享 8 折。船上免費提供餅乾小點心、桃子汁、水與啤酒。<br><small>※ 提早到的話，可以先在廣安里海灘邊晃晃。</small></p></div>
   <div class="card"><h3>廣安里海水浴場 <span class="tag opt">備案</span></h3><p>若遊艇搭不上，改到海灘邊欣賞廣安大橋的夜景。<br><small>※ 燈光秀只有週六，Day 3 是週五，不會遇到。</small></p></div>
 
   <div class="period">🍜 晚餐（二選一）</div>
   <div class="card eat"><h3>廣安里晚餐 <span class="tag opt">二選一</span></h3><p>下船後在廣安里用餐，兩間店距離近，約 19:30–21:00。<br><b>① <a href="https://maps.app.goo.gl/W1HGLVH2W92HFYgt9" target="_blank" rel="noopener">水邊最高豬肉湯飯 廣安店</a></b>：Catchtable 線上候位。<br><b>② <a href="https://maps.app.goo.gl/6wAuU88qzZEwqBWd6" target="_blank" rel="noopener">Dosaegi 烤黑豬肉</a></b>：無法訂位。</p></div>
 
   <div class="period">🌃 夜晚・The Bay 101</div>
-  <div class="card"><h3>The Bay 101 夜景 <span class="tag free">免費</span><span class="tag ride">🚕 廣安里搭計程車，約 10 分鐘</span></h3><p>高樓燈光倒映在水面上，散步看夜景，停留約 40 分鐘（約 21:10–21:50）。</p></div>
+  <div class="card hotc"><h3><span class="tag hot">🔥</span>The Bay 101 夜景<span class="tag ride">🚕 廣安里搭計程車，約 10 分鐘</span></h3><p>高樓燈光倒映在水面上，散步看夜景，停留約 40 分鐘（約 21:10–21:50）。</p></div>
 
   <div class="period">🚇 返回西面</div>
   <div class="card"><h3>返回西面飯店 <span class="tag metro">🚇 散步約 10 分鐘到冬柏站（1 號出口），搭 2 號線約 30 分鐘</span></h3><p>約 22:30 回到飯店休息。<br><small>※ 地鐵末班車約 23:30；隔天約 8:10 出發去松島，別太晚睡。</small></p></div>
@@ -218,18 +225,18 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
   <div class="route">西面出發 ➔ <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E9%BE%8D%E5%AE%AE%E9%9B%B2%E6%A9%8B%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">松島龍宮雲橋</a> ➔ <a href="https://maps.app.goo.gl/cT29wgyrtWuuA4Dq6" target="_blank" rel="noopener">松島海上纜車</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E5%A4%A9%E7%A9%BA%E6%AD%A5%E9%81%93%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">松島天空步道</a> ➔ 午餐（松島）➔ <a href="https://www.google.com/maps/search/?api=1&query=Arte%20Museum%20Busan" target="_blank" rel="noopener">ARTE MUSEUM</a> ➔ <a href="https://maps.app.goo.gl/XjDMScNcACZUsPKSA" target="_blank" rel="noopener">白淺灘文化村</a>（下午茶）➔ 烤肉晚餐（優先 83 獬豸）<br><small>🔥 Pass 最後使用日｜松島與西南側｜約 16:00 到期，ARTE MUSEUM 13:30 進場，時間充裕</small></div>
 
   <div class="period">☀️ 上午（Pass 最後使用日）</div>
-  <div class="card"><h3>松島龍宮雲橋 <span class="tag pass">Pass 免費</span><span class="tag opt">樓梯較多</span><span class="tag metro">🚇 西面搭 1 號線到札嘎其站（2 號出口），轉公車直達岩南公園海岸觀景台，約 1 小時</span></h3><p>約 8:10 從西面出發，約 9:15 開始逛。在松島海面上的步道漫步拍照，約 45 分鐘（約 9:15–10:00）。<br><small>※ 腳力不好可縮短。</small></p></div>
-  <div class="card"><h3><a href="https://maps.app.goo.gl/cT29wgyrtWuuA4Dq6" target="_blank" rel="noopener">松島海上纜車</a> <span class="tag pass">Pass 免費</span><span class="tag ride">🚡 松島天空公園站出發，搭乘約 10 分鐘</span></h3><p>搭纜車前，先在岩南公園海岸觀景台逛一下（約 10:00–10:15）；約 10:15 搭纜車橫跨海面到松島灣線車站，可選水晶車廂，腳下就是大海。09:00 營業，10:00 前後人比較少。</p></div>
+  <div class="card hotc"><h3><span class="tag hot">🔥</span>松島龍宮雲橋<span class="tag pass">Pass 免費</span><span class="tag opt">樓梯較多</span><span class="tag metro">🚇 西面搭 1 號線到札嘎其站（2 號出口），轉公車直達岩南公園海岸觀景台，約 1 小時</span></h3><p>約 8:10 從西面出發，約 9:15 開始逛。在松島海面上的步道漫步拍照，約 45 分鐘（約 9:15–10:00）。<br><small>※ 腳力不好可縮短。</small></p></div>
+  <div class="card hotc"><h3><span class="tag hot">🔥</span><a href="https://maps.app.goo.gl/cT29wgyrtWuuA4Dq6" target="_blank" rel="noopener">松島海上纜車</a><span class="tag pass">Pass 免費</span><span class="tag ride">🚡 松島天空公園站出發，搭乘約 10 分鐘</span></h3><p>搭纜車前，先在岩南公園海岸觀景台逛一下（約 10:00–10:15）；約 10:15 搭纜車橫跨海面到松島灣線車站，可選水晶車廂，腳下就是大海。09:00 營業，10:00 前後人比較少。</p></div>
   <div class="card"><h3>松島天空步道</h3><p>約 10:30–10:50，拍海景與透明玻璃步道，再走一小段拍人魚公主與龜島合照。</p></div>
 
   <div class="period">🍜 午餐（松島）</div>
   <div class="card eat"><h3>松島午餐 <span class="tag opt">三選一</span></h3><p>約 11:00–13:00，建議用餐約 2 小時。<br><b>① <a href="https://maps.app.goo.gl/X67YXxzmizhCY9Vz8" target="_blank" rel="noopener">海底貝殼王國</a></b>：11:00 營業；現烤貝類海鮮，有桌邊代烤服務。<br><b>② <a href="https://maps.app.goo.gl/ov5HXJJ2C62gz6mt9" target="_blank" rel="noopener">松島海솥</a></b>：10:30 營業；韓式海景釜飯，一人份點餐友善。<br><b>③ <a href="https://maps.app.goo.gl/UNNdpE96Mmef4pZA9" target="_blank" rel="noopener">松島海鮮刀削麵</a>（推薦）</b>：11:00 營業；韓式海鮮湯麵，CP 值最高。</p></div>
 
   <div class="period">🎨 下午・ARTE MUSEUM</div>
-  <div class="card"><h3>ARTE MUSEUM 釜山 <span class="tag pass">Pass 免費</span><span class="tag ride">🚕 松島搭計程車約 20 分鐘</span></h3><p>大型沉浸式媒體藝術館，全場光影投影，室內不怕曬也不怕雨。約 13:30 進場，停留約 2 小時（約 13:30–15:30）。<b>穿著淺色系服裝，拍照效果最好。</b><br><small>※ 週末成人原價約 ₩22,000–25,000；Pass 約 16:00 到期，13:30 進場有充足緩衝。</small></p></div>
+  <div class="card hotc"><h3><span class="tag hot">🔥</span>ARTE MUSEUM 釜山<span class="tag pass">Pass 免費</span><span class="tag ride">🚕 松島搭計程車約 20 分鐘</span></h3><p>大型沉浸式媒體藝術館，全場光影投影，室內不怕曬也不怕雨。約 13:30 進場，停留約 2 小時（約 13:30–15:30）。<b>穿著淺色系服裝，拍照效果最好。</b><br><small>※ 週末成人原價約 ₩22,000–25,000；Pass 約 16:00 到期，13:30 進場有充足緩衝。</small></p></div>
 
   <div class="period">🌈 下午茶・白淺灘</div>
-  <div class="card"><h3>白淺灘文化村・下午茶 <span class="tag ride">🚕 ARTE 搭計程車約 10 分鐘</span></h3><p>彩虹樓梯與海景小村，找間咖啡廳喝下午茶，坡道多，放慢腳步。約 15:45–17:30，可提早離開。</p></div>
+  <div class="card hotc"><h3><span class="tag hot">🔥</span>白淺灘文化村・下午茶<span class="tag ride">🚕 ARTE 搭計程車約 10 分鐘</span></h3><p>彩虹樓梯與海景小村，找間咖啡廳喝下午茶，坡道多，放慢腳步。約 15:45–17:30，可提早離開。</p></div>
 
   <div class="period">🍜 晚餐（優先 83 獬豸）</div>
   <div class="card eat"><h3>烤肉晚餐 <span class="tag opt">五選一</span></h3><p>約 17:30 從白淺灘出發，用餐約 1.5–2 小時。<br><b>A. 83 獬豸（優先）</b>：西面站步行約 2 分鐘；17:40 開放線上候位，在車上先用手機抽號，再依號碼進度前往。<br><b>B. 味贊王鹽烤肉 西面店</b>：不能預約，約等 30–50 分鐘。<br><b>C. 明倫進士排骨 西面店</b>：不能預約，預期也要排。<br><b>D. 味贊王鹽烤肉 富平店</b>：可預約，車程約 12 分鐘；吃完搭車回西面。<br><b>E. 烤肉男子 南浦店</b>：D 人太多時的備案。<br><small>※ A 排不到就改 D，人太多再改 E。</small></p></div>

@@ -82,6 +82,10 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
 .plans button.on{background:var(--primary);border-color:var(--primary);color:#fff}
 .plan{display:none}.plan.show{display:block}
 @media print{.plans{display:none}.plan{display:block!important}}
+.photos{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 0 18px;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.photos figure{margin:0;flex:none;scroll-snap-align:start}
+.photos img{display:block;height:160px;width:auto;border-radius:8px}
+.photos figcaption{font-size:.75rem;color:var(--muted);text-align:center;margin-top:2px}
 </style>
 </head>
 <body>
@@ -113,6 +117,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
   </section>
 </div>
 
+<div id="navAnchor"></div>
 <nav><div class="wrap" id="tabs">
   <a href="#d1" class="on">Day 1</a><a href="#d2">Day 2</a><a href="#d3">Day 3</a><a href="#d4">Day 4</a><a href="#d5">Day 5</a>
 </div></nav>
@@ -125,6 +130,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
     <h2>第一眼釜山：遇見小王子、逛港邊市場與南浦洞美食</h2>
     <p class="teaser">一早登上彩色山城遇見小王子，午後走進港邊市場與街頭小吃，黃昏看釜山港亮燈，夜裡可以逛一場熱鬧的夜市，或坐下來吃頓熱騰騰的正餐。</p></div>
   <div class="route">抵達釜山 ➔ 寄放行李 ➔<a href="https://www.google.com/maps/search/?api=1&query=甘川文化村%20釜山" target="_blank" rel="noopener">甘川文化村</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=札嘎其市場%20釜山" target="_blank" rel="noopener">札嘎其市場</a> 或 <a href="https://www.google.com/maps/search/?api=1&query=新東亞水產物綜合市場%20釜山" target="_blank" rel="noopener">新東亞水產物綜合市場</a>（午餐） ➔ <a href="https://maps.app.goo.gl/EyERvYPJmSbWhqT99" target="_blank" rel="noopener">國際市場</a>➔ <a href="https://www.google.com/maps/search/?api=1&query=BIFF廣場%20釜山" target="_blank" rel="noopener">BIFF 廣場</a> ➔ <a href="https://maps.app.goo.gl/R9k9xuAm42h5nhDX8" target="_blank" rel="noopener">KPOP FRIENDS 南浦店</a> ➔ <a href="https://maps.app.goo.gl/mubAr2osryfvZjv68" target="_blank" rel="noopener">樂天百貨光復店（空中花園＋超市）</a> ➔ <a href="https://maps.app.goo.gl/w4w7swTQ5CqWsbSu7" target="_blank" rel="noopener">Handasot 韓多鍋 南浦店</a>（晚餐為主，也可逛<a href="https://www.google.com/maps/search/?api=1&query=富平罐頭市場%20釜山" target="_blank" rel="noopener">富平罐頭市場夜市</a>或南浦洞商圈正餐）➔ 返回西面飯店</div>
+  <div class="photos"><figure><img src="image/spots/%E7%94%98%E5%B7%9D%E6%96%87%E5%8C%96%E6%9D%91.jpg" alt="甘川文化村" loading="lazy"><figcaption>甘川文化村</figcaption></figure><figure><img src="image/spots/%E6%A8%82%E5%A4%A9%E7%99%BE%E8%B2%A8%E5%85%89%E5%BE%A9%E5%BA%97%E7%A9%BA%E4%B8%AD%E8%8A%B1%E5%9C%92.jpg" alt="樂天百貨光復店・空中花園" loading="lazy"><figcaption>樂天百貨光復店・空中花園</figcaption></figure></div>
 
   <div class="period">🌅 清晨</div>
   <div class="card"><h3>抵達釜山・處理事務與寄放行李</h3><p>06:05 抵達，入境、領 Pass 券後，搭計程車到西面寄放行李。<br><small>※ <b style="color:#d6336c">最晚 08:00 要從西面出發</b>。</small></p></div>
@@ -163,6 +169,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
     <h2>蔚藍海岸巡禮：搭列車看海，訪完古寺滑車俯衝，晚上大啖雪蟹</h2>
     <p class="teaser">先搭彩色膠囊列車遇見海，在青沙浦拍照、喝咖啡、吃午餐；再搭海岸列車到松亭，接著逛海上古寺、玩斜坡滑車，晚上在機張吃大隻雪蟹。</p></div>
   <div class="route">西面出發 ➔ <a href="https://www.google.com/maps/search/?api=1&query=海雲台天空膠囊列車%20尾浦站%20釜山" target="_blank" rel="noopener">海岸列車／天空膠囊列車</a> ➔ 青沙浦（<a href="https://maps.app.goo.gl/Y7zmPEuVrv3YKuZE6" target="_blank" rel="noopener">平交道</a>、<a href="https://maps.app.goo.gl/tDukQ4CWWFRNX9Va7" target="_blank" rel="noopener">天空步道</a>、<a href="https://maps.app.goo.gl/aNBXgw6peF4s4ZHE6" target="_blank" rel="noopener">Orb Coffee Salon</a>、午餐）➔ 松亭（<a href="https://maps.app.goo.gl/Jy55n6xGthVgoG6k7" target="_blank" rel="noopener">海岸列車</a>）➔ <a href="https://www.google.com/maps/search/?api=1&query=海東龍宮寺%20釜山" target="_blank" rel="noopener">海東龍宮寺</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=Skyline%20Luge%20Busan" target="_blank" rel="noopener">Skyline Luge 斜坡滑車</a>➔ <a href="https://www.google.com/maps/search/?api=1&query=機張市場%20釜山" target="_blank" rel="noopener">機張市場</a>（晚餐）➔ 返回西面<br><small>🔥 Pass 啟用日｜東半部與機張｜海岸列車自費，Pass 從 Skyline Luge 才啟用</small></div>
+  <div class="photos"><figure><img src="image/spots/%E6%B5%B7%E5%B2%B8%E5%88%97%E8%BB%8A%20%E5%A4%A9%E7%A9%BA%E8%86%A0%E5%9B%8A.jpg" alt="海岸列車／天空膠囊" loading="lazy"><figcaption>海岸列車／天空膠囊</figcaption></figure><figure><img src="image/spots/%E9%9D%92%E6%B2%99%E6%B5%A6%E5%B9%B3%E4%BA%A4%E9%81%93.jpg" alt="青沙浦平交道" loading="lazy"><figcaption>青沙浦平交道</figcaption></figure><figure><img src="image/spots/%E9%9D%92%E6%B2%99%E6%B5%A6%E9%9B%99%E8%83%9E%E8%83%8E%E7%B4%85%E7%99%BD%E7%87%88%E5%A1%94.jpg" alt="青沙浦燈塔" loading="lazy"><figcaption>青沙浦燈塔</figcaption></figure><figure><img src="image/spots/%E6%B5%B7%E6%9D%B1%E9%BE%8D%E5%AE%AE%E5%AF%BA.jpg" alt="海東龍宮寺" loading="lazy"><figcaption>海東龍宮寺</figcaption></figure><figure><img src="image/spots/Skyline%20Luge.jpg" alt="Skyline Luge" loading="lazy"><figcaption>Skyline Luge</figcaption></figure></div>
 
   <div class="period">🌅 清晨・出發</div>
   <div class="card eat"><h3>早餐選擇（尾浦站附近）</h3><p><b><a href="https://www.google.com/maps/search/?api=1&query=%E5%85%94%E5%AD%90%E5%92%96%E5%95%A1%20%E5%B0%BE%E6%B5%A6%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">兔子咖啡</a></b>：08:00 營業，貝果、招牌海鹽拿鐵。<br><b><a href="https://www.google.com/maps/search/?api=1&query=%E6%A5%B5%E6%9D%B1%E8%B1%AC%E8%82%89%E6%B9%AF%E9%A3%AF%20%E5%B0%BE%E6%B5%A6%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">極東豬肉湯飯</a></b>：08:00 營業，豬肉湯飯或綜合湯飯。<br><b><a href="https://maps.app.goo.gl/ieg5qLnduy1hKhQ4A" target="_blank" rel="noopener">自然島鹽麵包</a></b>：9:00 營業，外帶上車吃；不單賣，一袋 4 入（₩12,000）。</p></div>
@@ -192,6 +199,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
     <h2>悠閒海灣日：泡完汗蒸幕，坐上遊艇追夕陽，夜裡到 Bay 101 看燈海</h2>
     <p class="teaser">上午在海雲台吃早餐、逛海理團路，午後到 Centum City 泡汗蒸幕，傍晚順路逛南川洞麵包街，再搭遊艇看廣安大橋；吃完晚餐，到 The Bay 101 欣賞夜景。</p></div>
   <div class="route">西面出發 ➔ <a href="https://maps.app.goo.gl/4Lr3sgo1ZEq5A5jJ6" target="_blank" rel="noopener">EGG DROP</a>（早餐）➔ <a href="https://www.google.com/maps/search/?api=1&query=海理團路%20釜山" target="_blank" rel="noopener">海理團路</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=SPA%20LAND%20Centum%20City%20釜山" target="_blank" rel="noopener">SPA LAND 汗蒸幕</a> ➔ <a href="https://maps.app.goo.gl/yRfPVPfiohM3GgTC8" target="_blank" rel="noopener">南川洞麵包街</a> ➔ <a href="https://maps.app.goo.gl/61eSg4GdgN9Rq6aM7" target="_blank" rel="noopener">Yacht Holic 遊艇</a> ➔ 廣安里晚餐 ➔ <a href="https://www.google.com/maps/search/?api=1&query=The%20Bay%20101%20釜山" target="_blank" rel="noopener">The Bay 101</a> ➔ 返回飯店<br><small>🔥 Pass 第 2 天｜海雲台、Centum City 與廣安里｜汗蒸幕是 Pass 景點</small></div>
+  <div class="photos"><figure><img src="image/spots/SPA%20LAND.jpg" alt="SPA LAND" loading="lazy"><figcaption>SPA LAND</figcaption></figure><figure><img src="image/spots/Yacht%20Holic%20%E9%81%8A%E8%89%87.jpg" alt="Yacht Holic" loading="lazy"><figcaption>Yacht Holic</figcaption></figure><figure><img src="image/spots/%E5%BB%A3%E5%AE%89%E9%87%8C%E6%B5%B7%E6%B0%B4%E6%B5%B4%E5%A0%B4.jpg" alt="廣安里海水浴場" loading="lazy"><figcaption>廣安里海水浴場</figcaption></figure><figure><img src="image/spots/The%20Bay%20101.jpg" alt="The Bay 101" loading="lazy"><figcaption>The Bay 101</figcaption></figure></div>
 
   <div class="period">☀️ 上午・海雲台</div>
   <div class="card eat"><h3><a href="https://maps.app.goo.gl/4Lr3sgo1ZEq5A5jJ6" target="_blank" rel="noopener">早餐：EGG DROP</a> <span class="tag metro">🚇 西面搭 2 號線到海雲台站，約 40 分鐘</span></h3><p>海雲台站 7 號出口，07:00 營業，約 9:00 從西面出發。吃完直接走到海理團路。</p></div>
@@ -223,6 +231,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
     <h2>飛越海面的奇幻視角：松島纜車、ARTE MUSEUM 與白淺灘</h2>
     <p class="teaser">上午逛松島龍宮雲橋、搭纜車、走天空步道，中午吃松島海鮮；下午到 ARTE MUSEUM 看沉浸式展覽，再到白淺灘文化村喝下午茶，晚上吃烤肉。</p></div>
   <div class="route">西面出發 ➔ <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E9%BE%8D%E5%AE%AE%E9%9B%B2%E6%A9%8B%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">松島龍宮雲橋</a> ➔ <a href="https://maps.app.goo.gl/cT29wgyrtWuuA4Dq6" target="_blank" rel="noopener">松島海上纜車</a> ➔ <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E5%B3%B6%E5%A4%A9%E7%A9%BA%E6%AD%A5%E9%81%93%20%E9%87%9C%E5%B1%B1" target="_blank" rel="noopener">松島天空步道</a> ➔ 午餐（松島）➔ <a href="https://www.google.com/maps/search/?api=1&query=Arte%20Museum%20Busan" target="_blank" rel="noopener">ARTE MUSEUM</a> ➔ <a href="https://maps.app.goo.gl/XjDMScNcACZUsPKSA" target="_blank" rel="noopener">白淺灘文化村</a>（下午茶）➔ 烤肉晚餐（優先 83 獬豸）<br><small>🔥 Pass 最後使用日｜松島與西南側｜約 16:00 到期，ARTE MUSEUM 13:30 進場，時間充裕</small></div>
+  <div class="photos"><figure><img src="image/spots/%E6%9D%BE%E5%B3%B6%E9%BE%8D%E5%AE%AE%E9%9B%B2%E6%A9%8B.jpg" alt="松島龍宮雲橋" loading="lazy"><figcaption>松島龍宮雲橋</figcaption></figure><figure><img src="image/spots/%E6%9D%BE%E5%B3%B6%E6%B5%B7%E4%B8%8A%E7%BA%9C%E8%BB%8A.jpg" alt="松島海上纜車" loading="lazy"><figcaption>松島海上纜車</figcaption></figure><figure><img src="image/spots/ARTE%20MUSEUM.jpg" alt="ARTE MUSEUM" loading="lazy"><figcaption>ARTE MUSEUM</figcaption></figure><figure><img src="image/spots/%E7%99%BD%E6%B7%BA%E7%81%98%E6%96%87%E5%8C%96%E6%9D%91.jpg" alt="白淺灘文化村" loading="lazy"><figcaption>白淺灘文化村</figcaption></figure></div>
 
   <div class="period">☀️ 上午（Pass 最後使用日）</div>
   <div class="card hotc"><h3><span class="tag hot">🔥</span>松島龍宮雲橋<span class="tag pass">Pass 免費</span><span class="tag opt">樓梯較多</span><span class="tag metro">🚇 西面搭 1 號線到札嘎其站（2 號出口），轉公車直達岩南公園海岸觀景台，約 1 小時</span></h3><p>約 8:10 從西面出發，約 9:15 開始逛。在松島海面上的步道漫步拍照，約 45 分鐘（約 9:15–10:00）。<br><small>※ 腳力不好可縮短。</small></p></div>
@@ -253,6 +262,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
     <h2>最後的悠閒：田浦咖啡街、豬肉湯飯與西面採買</h2>
     <p class="teaser">最後一天不趕行程，睡到自然醒，退房後在田浦吃早餐、逛咖啡街與選物店，午餐吃暖胃的豬肉湯飯，下午到西面逛街，帶著小吃去機場。</p></div>
   <div class="route">慢慢起床 ➔ 退房寄放行李 ➔ 田浦早餐（<a href="https://maps.app.goo.gl/X4vZoWbc2S1quWE39" target="_blank" rel="noopener">Your Type Jeonpo</a>／<a href="https://maps.app.goo.gl/VhBvv6ENSrBYxy819" target="_blank" rel="noopener">Old Mont Bagel</a>）➔ 田浦咖啡街・選物店 ➔ <a href="https://maps.app.goo.gl/mkaGLdB2H6eVKb2h6" target="_blank" rel="noopener">松亭三代豬肉湯飯</a>（午餐）➔ 西面逛街採買 ➔ 買小吃帶去機場 ➔ 拿行李 ➔ 快樂返程</div>
+  <div class="photos"><figure><img src="image/spots/Your%20Type%20Jeonpo.jpg" alt="Your Type Jeonpo" loading="lazy"><figcaption>Your Type Jeonpo</figcaption></figure><figure><img src="image/spots/Old%20Mont%20Bagel.jpg" alt="Old Mont Bagel" loading="lazy"><figcaption>Old Mont Bagel</figcaption></figure><figure><img src="image/spots/Butter%20shop.jpg" alt="Butter shop" loading="lazy"><figcaption>Butter shop</figcaption></figure><figure><img src="image/spots/%E5%A4%A7%E5%89%B5.jpg" alt="大創" loading="lazy"><figcaption>大創</figcaption></figure><figure><img src="image/spots/OLIVE%20YOUNG.jpg" alt="OLIVE YOUNG" loading="lazy"><figcaption>OLIVE YOUNG</figcaption></figure></div>
 
   <div class="period">🌤️ 上午・田浦</div>
   <div class="card"><h3>慢慢起床・退房</h3><p>睡到自然醒，約 10:00 退房，把行李寄放在飯店，輕裝出門。<br><small>※ 退房時間依飯店規定。</small></p></div>
@@ -294,7 +304,7 @@ footer{text-align:center;color:var(--muted);padding:30px 16px 50px;font-size:.9r
     a.addEventListener('click',function(e){
       e.preventDefault();
       show(a.getAttribute('href').slice(1));
-      window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+      window.scrollTo({top:document.getElementById('navAnchor').getBoundingClientRect().top+window.pageYOffset,behavior:'smooth'});
     });
   });
   var airBtns=document.querySelectorAll('#air button');
